@@ -1,12 +1,17 @@
 const video = document.getElementById('video')
 const startButton = document.getElementById('start-button')
-const dd = document.getElementById("test1")
+const gridDiv = document.getElementById("trackingGridDiv")
+const trackingDiv = document.getElementById("track")
+const trackingButton = document.getElementById("trackButton")
 
-var canvas2 = document.getElementById('gca');
+
+
+var canvas2 = document.getElementById('trackingGridCanvas');
 var running = false;
 let intervallid = 0
 var created = false;
-
+var tracking = false;
+var tracked = false;
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
@@ -66,17 +71,44 @@ function stopVideo() {
 
 startButton.addEventListener('click', function(){
   if (!running){
-    running=true
+    running=true;
     startVideo();
-    dd.style.display="block";
+    trackingDiv.style.visibility="hidden"
+    startButton.innerHTML="Stop"
+    trackingDiv.style.visibility="visible"
+
   } else{
-    
-    dd.style.display="none";
     running = false;
-    stopVideo()
+    trackingDiv.style.visibility="hidden"
+    startButton.innerHTML="Start"
+    gridDiv.style.visibility="hidden"
+  
+    stopVideo();
+    tracking=false;
+    if (tracked) {
+      tracked=false;
+      var button = new bootstrap.Button(trackingButton)
+      button.toggle()
+    }
+    
+  }
+}); 
+
+trackingButton.addEventListener('click', function(){
+  if (!tracking){
+      tracking=true;
+      gridDiv.style.visibility="visible"
+      tracked=true;
+  } else{
+    tracking=false;
+    tracked=false;
+    gridDiv.style.visibility="hidden"
   }
   
 }); 
+
+
+
 
 
 
