@@ -26,7 +26,7 @@ video.addEventListener('play', () => {
   const canvas = faceapi.createCanvasFromMedia(video)
   document.body.append(canvas)
   // Größe des Anzeigebereichs festlegen
-  const displaySize = { width: video.width, height: video.height }
+  const displaySize = { width: video.offsetWidth, height: video.offsetHeight }
   // Die Dimensionen des Canvas an die Anzeigegröße anpassen
   faceapi.matchDimensions(canvas, displaySize)
   setInterval(async () => {
