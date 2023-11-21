@@ -5,3 +5,7 @@
 #trackingGridDiv {
     visibility: hidden;
 }
+
+body {
+    background-color: aqua;
+}
