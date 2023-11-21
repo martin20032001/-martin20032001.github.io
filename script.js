@@ -22,7 +22,7 @@ Promise.all([
 
 
 function startVideo() {
-  navigator.mediaDevices.getUserMedia(
+  navigator.getUserMedia(
     { video: {} },
     stream => video.srcObject = stream,
     err => console.error(err)
