@@ -33,10 +33,11 @@ video.addEventListener('play', () => {
   canvas2.replaceWith(canvas)
 
   // Größe des Anzeigebereichs festlegen
-  const displaySize = { width: video.offsetWidth, height: video.offsetHeight }
+  var displaySize = { width: video.offsetWidth, height: video.offsetHeight }
   // Die Dimensionen des Canvas an die Anzeigegröße anpassen
   faceapi.matchDimensions(canvas, displaySize)
   intervallid= setInterval(async () => {
+    displaySize = { width: video.offsetWidth, height: video.offsetHeight }
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
@@ -44,6 +45,7 @@ video.addEventListener('play', () => {
     faceapi.draw.drawDetections(canvas, resizedDetections)
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+    
   }, 100)
   }
   

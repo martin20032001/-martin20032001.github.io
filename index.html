@@ -12,22 +12,42 @@
 </head>
 
 <body>
-  
-  <div class="h-100 align-items-center justify-content-center">
-    <h1 class="text-center"> Emotion Recognizer</h1>
-  
-  
-    <div class="embed-responsive">
-    <video id="video" class="mw-100" autoplay muted></video>
-    </div>
-    <p>
-      <button id="start-button" class="btn btn-outline-primary btn-lg align-content-center">Starten</button>
-    </p>
-    <div id ="test1">
-      <canvas id = "gca"></canvas>
-    </div>
 
+
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Dein Gesicht wird getracked und die Emotionen angezeigt.</h1>
+        </div>
+        
+      </div>
+      <div class="row">
+        
+        <div class="col text-center">
+          <button id="start-button" class="btn btn-outline-primary btn-lg align-content-center">Starten</button>
+          
+          <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+          
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <video id="video" class="mw-100" autoplay muted></video>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <div id ="test1">
+            <canvas id = "gca"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 
   
   
