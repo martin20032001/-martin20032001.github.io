@@ -16,41 +16,45 @@
 
   <div class="container">
     <div class="row align-items-center">
-      <div class="row">
+      <div class="row gy-3">
         <div class="col text-center">
           <h1>Track your emotions</h1>
         </div>
         
       </div>
-      <div class="row">
-        <div class="col text-center">
-          <button id="start-button" class="btn btn-outline-light">Start</button>
+      <div class="row gy-5">
+        <div class="col text-end">
+          <button id="start-button" class="btn btn-outline-light btn-lg">Start</button>
         </div>
-
+        <div class="col text-start">
+          <div id="track">
+            <button id ="trackButton" type="button" class="btn btn-outline-light btn-lg" data-bs-toggle="button">Show Tracking</button>
+          </div>
         </div>
         
-      </div>
-      <div class="row">
-        <div class="col"></div>
 
-        <div class="col-xm-5 text-center">
-          <video id="video" class="mw-100" autoplay muted></video>
-        </div>
-
-        <div class="col"></div>
       </div>
-      <div class="row">
-        <div class="col text-center">
-          <div id="track">
-            <button id ="trackButton" type="button" class="btn btn-outline-light" data-bs-toggle="button">Show Tracking</button>
+        
+      </div>
+      <div class="row gy-5">
+        <div class="col align-content-center"></div>
+        <div class="container2 align-content-center">
+          <div class="col text-center">
+            <video id="video" class="mw-100" autoplay muted></video>
           </div>
+        
+          <div id ="trackingGridDiv">
+            <canvas id = "trackingGridCanvas"></canvas>
+          </div>
+        </div>
+        
+
+        <div class="col"></div>
       </div>
       
       <div class="row">
         <div class="col text-center">
-          <div id ="trackingGridDiv">
-            <canvas id = "trackingGridCanvas"></canvas>
-          </div>
+          
         </div>
       </div>
     </div>
