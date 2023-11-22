@@ -26,3 +26,46 @@ h1{
     left: 50%;
     transform: translateX(-50%);
 }
+
+
+
+   
+#circle-happy {
+    width: 200px;
+    height: 200px;
+    border: 8px solid black;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+    
+  }
+
+  #circle-neutral {
+    width: 200px;
+    height: 200px;
+    border: 8px solid black;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+  }
+  
+  #circle-angry{
+    width: 200px;
+    height: 200px;
+    border: 8px solid black;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+  }
+
+  #circle-surprised {
+    width: 200px;
+    height: 200px;
+    border: 8px solid black;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #e809bf 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+  }
+
+
+  
