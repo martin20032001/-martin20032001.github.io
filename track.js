@@ -1,15 +1,16 @@
 const video = document.getElementById('video')
 const startButton = document.getElementById('start-button')
-const gridDiv = document.getElementById("trackingGridDiv")
 const trackingDiv = document.getElementById("track")
 const trackingButton = document.getElementById("trackButton")
 const homeSite = "index.html"
-
 const canvas2 = document.getElementById('trackingGridCanvas');
+const trackingGridDiv = document.getElementById('trackingGridDiv');
+ 
 var running = false;
 var created = false;
 var tracking = false;
 var tracked = false;
+var currentWidth = 0;
 
 
 Promise.all([
@@ -33,12 +34,19 @@ video.addEventListener('play', () => {
     created =true
     canvas = faceapi.createCanvasFromMedia(video)
     canvas2.replaceWith(canvas)
+    currentWidth = video.offsetWidth
 
     var displaySize = { width: video.offsetWidth, height: video.offsetHeight }
-
     faceapi.matchDimensions(canvas, displaySize)
+
     setInterval(async () => {
       displaySize = { width: video.offsetWidth, height: video.offsetHeight }
+      if (resizeCheck(currentWidth, video)) {
+        faceapi.matchDimensions(canvas, displaySize)
+          currentWidth = video.offsetWidth;
+      }
+      
+      
       var detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
       const resizedDetections = faceapi.resizeResults(detections, displaySize)
       canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
@@ -49,6 +57,15 @@ video.addEventListener('play', () => {
     }, 100)
   }
 })
+
+function resizeCheck(w, video) {
+  if (video.offsetWidth != w) {
+    return true
+  } else {
+    return false
+  }
+    
+}
 
 function stopVideo() {
   let video = document.querySelector('video'); 
@@ -67,15 +84,14 @@ startButton.addEventListener('click', function(){
   if (!running){
     running=true;
     startVideo();
-    trackingDiv.style.visibility="hidden"
     startButton.innerHTML="Stop"
     trackingDiv.style.visibility="visible"
 
   } else{
     running = false;
-    trackingDiv.style.visibility="hidden"
+    trackingGridDiv.style.visibility="hidden"
     startButton.innerHTML="Start"
-    gridDiv.style.visibility="hidden"
+    canvas2.style.visibility="hidden"
   
     stopVideo();
     tracking=false;
@@ -89,14 +105,16 @@ startButton.addEventListener('click', function(){
 }); 
 
 trackingButton.addEventListener('click', function(){
+  
   if (!tracking){
       tracking=true;
-      gridDiv.style.visibility="visible"
+      trackingGridDiv.style.visibility="visible"
       tracked=true;
   } else{
+    console.log("hi")
     tracking=false;
     tracked=false;
-    gridDiv.style.visibility="hidden"
+    trackingGridDiv.style.visibility="hidden"
   }
 }); 
 
