@@ -15,6 +15,13 @@ const colorNeutral ='#9c958a'
 const colorSad = '#091fe8'
 const colorDisgusted ='#36e809'
 
+const imgNeutral="neutral.png"
+const imgHappy="happy.png"
+const imgSad="sad.png"
+const imgDisgusted="disgusted.png"
+const imgSurprised="surprised.png"
+const imgAngry="angry.png"
+
 var running = false;
 var created = false;
 
@@ -50,12 +57,12 @@ video.addEventListener('play', () => {
     var sad = expressions.sad;
     var disgusted = expressions.disgusted;
 
-    changefilling(circleHappy,transformresult(happiness),colorHappy)
-    changefilling(circleNeutral,transformresult(neutral),colorNeutral)
-    changefilling(circleAngry,transformresult(angry),colorAngry)
-    changefilling(circleSurprised,transformresult(surprised),colorSurprised)
-    changefilling(circleSad,transformresult(sad),colorSad)
-    changefilling(circleDisgusted,transformresult(disgusted),colorDisgusted)
+    changefilling(circleHappy,transformresult(happiness),colorHappy, imgHappy)
+    changefilling(circleNeutral,transformresult(neutral),colorNeutral, imgNeutral)
+    changefilling(circleAngry,transformresult(angry),colorAngry, imgAngry)
+    changefilling(circleSurprised,transformresult(surprised),colorSurprised, imgSurprised)
+    changefilling(circleSad,transformresult(sad),colorSad, imgSad)
+    changefilling(circleDisgusted,transformresult(disgusted),colorDisgusted, imgDisgusted)
 
 
     })
@@ -95,12 +102,12 @@ startButton.addEventListener('click', function(){
     setTimeout(function(){startButton.disabled = false;},100);
   } else{
     running = false;
-    changefilling(circleAngry,100,colorAngry)
-    changefilling(circleHappy,100,colorHappy)
-    changefilling(circleNeutral,100,colorNeutral)
-    changefilling(circleSurprised,100,colorSurprised)
-    changefilling(circleSad,100,colorSad)
-    changefilling(circleDisgusted,100,colorDisgusted)
+    changefilling(circleAngry,100,colorAngry, imgAngry)
+    changefilling(circleHappy,100,colorHappy, imgHappy)
+    changefilling(circleNeutral,100,colorNeutral, imgNeutral)
+    changefilling(circleSurprised,100,colorSurprised, imgSurprised)
+    changefilling(circleSad,100,colorSad, imgSad)
+    changefilling(circleDisgusted,100,colorDisgusted, imgDisgusted)
     startButton.innerHTML="Start"
     stopVideo();
 
@@ -108,10 +115,11 @@ startButton.addEventListener('click', function(){
 }); 
 
 //Ändert die Farbe und die Füllung des Kreises abhängig von i
-function changefilling(kreis, i, farbe){
+function changefilling(kreis, i, farbe, smileimg){
   i = i*100
-  s = 'linear-gradient(0deg, '+farbe+' '+i.toString().slice(0, 4)+'%, #3f48cc00 0%)';
+  s = 'url('+smileimg+'), linear-gradient(0deg, '+farbe+' '+i.toString().slice(0, 4)+'%, #3f48cc00 0%)';
   kreis.style.background = s;
+  kreis.style.backgroundSize= 'cover';
 }
 
 

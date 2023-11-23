@@ -26,27 +26,34 @@ h1{
     height: 100px;
     border: 8px solid black;
     border-radius: 50%;
-    background: linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
+    background-image:url("happy.png"),linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
     background-clip: padding-box;
+    background-size: cover;
     
 }
 
-#circle-neutral {
+#circle-neutral{
+  
   width: 100px;
   height: 100px;
   border: 8px solid black;
   border-radius: 50%;
-  background: linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
+  background-image:url("neutral.png"), linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
   background-clip: padding-box;
+  background-size: cover;
+  
 }
+
+
 
 #circle-angry{
   width: 100px;
   height: 100px;
   border: 8px solid black;
   border-radius: 50%;
-  background: linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
+  background-image:url("angry.png"),linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
   background-clip: padding-box;
+  background-size: cover;
 }
 
 #circle-surprised {
