@@ -223,3 +223,23 @@ h1{
 
 
 
+.nodetection {
+  animation: pulse 2s infinite;
+  visibility: hidden;
+  
+}
+
+@keyframes pulse {
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100% {
+    color: rgb(255, 0, 0);
+  }
+}
+
+
+

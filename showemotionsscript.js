@@ -1,5 +1,6 @@
 const video = document.getElementById('video')
 const startButton = document.getElementById('start-button')
+const noDetection = document.getElementById('noDetection')
 
 const circleHappy = document.getElementById("circle-happy")
 const circleNeutral = document.getElementById("circle-neutral")
@@ -24,6 +25,13 @@ const imgAngry="angry.png"
 
 var running = false;
 var created = false;
+
+var happiness=0;
+var neutral=0;
+var angry=0;
+var surprised=0;
+var sad=0;
+var disgusted=0;
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -50,12 +58,12 @@ video.addEventListener('play', () => {
     
     detections.forEach(result => {
     const {expressions} = result
-    var happiness = expressions.happy;
-    var neutral = expressions.neutral;
-    var angry = expressions.angry;
-    var surprised = expressions.surprised;
-    var sad = expressions.sad;
-    var disgusted = expressions.disgusted;
+    happiness = expressions.happy;
+    neutral = expressions.neutral;
+    angry = expressions.angry;
+    surprised = expressions.surprised;
+    sad = expressions.sad;
+    disgusted = expressions.disgusted;
 
     changefilling(circleHappy,transformresult(happiness),colorHappy, imgHappy)
     changefilling(circleNeutral,transformresult(neutral),colorNeutral, imgNeutral)
@@ -64,12 +72,13 @@ video.addEventListener('play', () => {
     changefilling(circleSad,transformresult(sad),colorSad, imgSad)
     changefilling(circleDisgusted,transformresult(disgusted),colorDisgusted, imgDisgusted)
 
-
+    
     })
   }, 100)
   }
-  
 })
+
+
 
 function transformresult(value){
   if (value > 1){
