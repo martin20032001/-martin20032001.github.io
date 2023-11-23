@@ -76,11 +76,7 @@ h1{
   background-clip: padding-box;
 }
 
-@media (min-width: 0px){
-  #placeholder1 {
-    height: 10px;
-  } 
-}
+
 @media (min-width: 1000px){
   #placeholder1 {
     height: 60px;
@@ -93,6 +89,18 @@ h1{
   #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
     width: 50px;
     height: 50px;
+  } 
+  #placeholder1 {
+    height: 10px;
+  } 
+  #placeholder2 {
+    height: 10px;
+  } 
+  #placeholder3 {
+    height: 10px;
+  } 
+  #placeholder4 {
+    height: 10px;
   } 
 }
 @media (min-width: 140px){
@@ -135,6 +143,18 @@ h1{
   #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
     width: 140px;
     height: 140px;
+  } 
+  #placeholder1 {
+    height: 20px;
+  } 
+  #placeholder2 {
+    height: 20px;
+  } 
+  #placeholder3 {
+    height: 40px;
+  } 
+  #placeholder4 {
+    height: 40px;
   } 
 }
 

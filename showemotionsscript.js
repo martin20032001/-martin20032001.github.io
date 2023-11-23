@@ -99,6 +99,8 @@ startButton.addEventListener('click', function(){
     changefilling(circleHappy,100,colorHappy)
     changefilling(circleNeutral,100,colorNeutral)
     changefilling(circleSurprised,100,colorSurprised)
+    changefilling(circleSad,100,colorSad)
+    changefilling(circleDisgusted,100,colorDisgusted)
     startButton.innerHTML="Start"
     stopVideo();
 
