@@ -15,11 +15,11 @@ h1{
     text-shadow: 1em;
 }
 
-
-.container{
-  display: inline;
+.circle-container {
+  display: flex;
+  justify-content: center;
 }
-   
+
 #circle-happy {
     width: 150px;
     height: 150px;

@@ -15,25 +15,6 @@ var running = false;
 
 var created = false;
 
-var last1h=0;
-var last2h=0;
-var last3h=0;
-
-var last1n=0;
-var last2n=0;
-var last3n=0;
-
-var last1s=0;
-var last2s=0;
-var last3s=0;
-
-var last1a=0;
-var last2a=0;
-var last3a=0;
-
-
-
-
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
@@ -67,31 +48,11 @@ video.addEventListener('play', () => {
     valueNeutral = neutral
     valueAngry = angry
     valueSurprised = surprised
-
-    /**valueHappiness = (happiness+last1h+last2h)/3
-    valueNeutral = (neutral+last1n+last2n)/3
-    valueAngry = (angry+last1a+last2a)/3
-    valueSurprised = (surprised+last1s+last2s)/3
-    */
-    
     changefilling(circleHappy,transformresult(valueHappiness),colorHappy)
     changefilling(circleNeutral,transformresult(valueNeutral),colorNeutral)
     changefilling(circleAngry,transformresult(valueAngry),colorAngry)
     changefilling(circleSurprised,transformresult(valueSurprised),colorSurprised)
 
-    // Speichern der letzten 2 Werte jeweils
-    /*last2h = last1h
-    last1h = happiness
-
-    last2n = last1n
-    last1n = neutral
-    
-    last2a = last1a
-    last1a = angry
-
-    last2s = last1s
-    last1s = surprised
-    */
     })
   }, 100)
   }
