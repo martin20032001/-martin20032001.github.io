@@ -63,10 +63,16 @@ video.addEventListener('play', () => {
     var angry = expressions.angry;
     var surprised = expressions.surprised;
     
-    valueHappiness = (happiness+last1h+last2h)/3
+    valueHappiness = happiness
+    valueNeutral = neutral
+    valueAngry = angry
+    valueSurprised = surprised
+
+    /**valueHappiness = (happiness+last1h+last2h)/3
     valueNeutral = (neutral+last1n+last2n)/3
     valueAngry = (angry+last1a+last2a)/3
     valueSurprised = (surprised+last1s+last2s)/3
+    */
     
     changefilling(circleHappy,transformresult(valueHappiness),colorHappy)
     changefilling(circleNeutral,transformresult(valueNeutral),colorNeutral)
@@ -74,7 +80,7 @@ video.addEventListener('play', () => {
     changefilling(circleSurprised,transformresult(valueSurprised),colorSurprised)
 
     // Speichern der letzten 2 Werte jeweils
-    last2h = last1h
+    /*last2h = last1h
     last1h = happiness
 
     last2n = last1n
@@ -85,6 +91,7 @@ video.addEventListener('play', () => {
 
     last2s = last1s
     last1s = surprised
+    */
     })
   }, 100)
   }
