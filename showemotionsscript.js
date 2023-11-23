@@ -37,6 +37,7 @@ video.addEventListener('play', () => {
 
   setInterval(async () => {
     var detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+    
     detections.forEach(result => {
     const {expressions} = result
     var happiness = expressions.happy;
@@ -54,7 +55,7 @@ video.addEventListener('play', () => {
     changefilling(circleSurprised,transformresult(valueSurprised),colorSurprised)
 
     })
-  }, 100)
+  }, 1000)
   }
   
 })
