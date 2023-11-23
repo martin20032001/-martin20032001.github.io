@@ -5,14 +5,17 @@ const circleHappy = document.getElementById("circle-happy")
 const circleNeutral = document.getElementById("circle-neutral")
 const circleAngry = document.getElementById("circle-angry")
 const circleSurprised = document.getElementById("circle-surprised")
+const circleSad = document.getElementById("circle-sad")
+const circleDisgusted = document.getElementById("circle-disgusted")
 
 const colorAngry = '#fa3434'
 const colorSurprised ='#e809bf'
 const colorHappy = '#ffff00'
 const colorNeutral ='#9c958a'
+const colorSad = '#091fe8'
+const colorDisgusted ='#36e809'
 
 var running = false;
-
 var created = false;
 
 Promise.all([
@@ -44,15 +47,16 @@ video.addEventListener('play', () => {
     var neutral = expressions.neutral;
     var angry = expressions.angry;
     var surprised = expressions.surprised;
-  
-    valueHappiness = happiness
-    valueNeutral = neutral
-    valueAngry = angry
-    valueSurprised = surprised
-    changefilling(circleHappy,transformresult(valueHappiness),colorHappy)
-    changefilling(circleNeutral,transformresult(valueNeutral),colorNeutral)
-    changefilling(circleAngry,transformresult(valueAngry),colorAngry)
-    changefilling(circleSurprised,transformresult(valueSurprised),colorSurprised)
+    var sad = expressions.sad;
+    var disgusted = expressions.disgusted;
+
+    changefilling(circleHappy,transformresult(happiness),colorHappy)
+    changefilling(circleNeutral,transformresult(neutral),colorNeutral)
+    changefilling(circleAngry,transformresult(angry),colorAngry)
+    changefilling(circleSurprised,transformresult(surprised),colorSurprised)
+    changefilling(circleSad,transformresult(sad),colorSad)
+    changefilling(circleDisgusted,transformresult(disgusted),colorDisgusted)
+
 
     })
   }, 1000)
