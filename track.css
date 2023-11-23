@@ -1,0 +1,30 @@
+#track {
+    visibility: hidden;
+}
+
+#trackingGridDiv {
+    visibility: hidden;
+}
+
+body {
+    background: rgb(118,231,255);
+    background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
+}
+h1{
+    color: azure;
+    text-shadow: 1em;
+}
+.container2 {
+    position:relative;
+    
+
+
+}
+
+#video,#trackingGridDiv{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
