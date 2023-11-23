@@ -1,6 +1,7 @@
 const video = document.getElementById('video')
 const startButton = document.getElementById('start-button')
 const noDetection = document.getElementById('noDetection')
+const backButton = document.getElementById('backButton')
 
 const circleHappy = document.getElementById("circle-happy")
 const circleNeutral = document.getElementById("circle-neutral")
@@ -22,6 +23,8 @@ const imgSad="sad.png"
 const imgDisgusted="disgusted.png"
 const imgSurprised="surprised.png"
 const imgAngry="angry.png"
+
+const homeSite = "index.html"
 
 var running = false;
 var created = false;
@@ -131,6 +134,13 @@ function changefilling(kreis, i, farbe, smileimg){
   kreis.style.backgroundSize= 'cover';
 }
 
+backButton.addEventListener('click', function(){
+  if (running){
+    stopVideo();
+  }
+  window.location.href = homeSite;
+
+}); 
 
 
 
