@@ -43,7 +43,7 @@ video.addEventListener('play', () => {
     var neutral = expressions.neutral;
     var angry = expressions.angry;
     var surprised = expressions.surprised;
-    
+  
     valueHappiness = happiness
     valueNeutral = neutral
     valueAngry = angry
