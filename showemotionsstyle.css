@@ -7,6 +7,7 @@
 }
 
 body {
+    
     background: rgb(118,231,255);
     background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
 }
@@ -21,8 +22,8 @@ h1{
 }
 
 #circle-happy {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 8px solid black;
     border-radius: 50%;
     background: linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
@@ -31,8 +32,8 @@ h1{
   }
 
   #circle-neutral {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 8px solid black;
     border-radius: 50%;
     background: linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
@@ -40,8 +41,8 @@ h1{
   }
   
   #circle-angry{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 8px solid black;
     border-radius: 50%;
     background: linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
@@ -49,13 +50,121 @@ h1{
   }
 
   #circle-surprised {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 8px solid black;
     border-radius: 50%;
     background: linear-gradient(0deg, #e809bf 100%, #3f48cc00 0%);
     background-clip: padding-box;
   }
 
+  #circle-sad {
+    width: 100px;
+    height: 100px;
+    border: 8px solid black;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #091fe8 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+  }
+
+  #circle-disgusted {
+    width: 100px;
+    height: 100px;
+    border: 8px solid black;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #36e809 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+  }
 
   
+  @media (min-width: 0px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 50px;
+      height: 50px;
+    } 
+  }
+  @media (min-width: 140px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 80px;
+      height: 80px;
+    } 
+  }
+  @media (min-width: 200px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 120px;
+      height: 120px;
+    } 
+  }
+  @media (min-width: 280px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 150px;
+      height: 150px;
+    } 
+  }
+  @media (min-width: 345px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 90px;
+      height: 90px;
+    } 
+  }
+  @media (min-width: 410px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 110px;
+      height: 110px;
+    } 
+  }
+  @media (min-width: 470px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 130px;
+      height: 130px;
+    } 
+  }
+  @media (min-width: 500px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 140px;
+      height: 140px;
+    } 
+  }
+  
+
+  @media (min-width: 600px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 150px;
+      height: 150px;
+    } 
+  }
+  @media (min-width: 780px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 170px;
+      height: 170px;
+    } 
+  }
+  @media (min-width: 800px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 200px;
+      height: 200px;
+    } 
+  }
+
+  @media (min-width: 900px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 210px;
+      height: 210px;
+    } 
+  }
+
+  @media (min-width: 1000px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 250px;
+      height: 250px;
+    } 
+  }
+  @media (min-width: 1200px){
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
+      width: 300px;
+      height: 300px;
+    } 
+  }
+  
+  
+
