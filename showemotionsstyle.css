@@ -126,6 +126,19 @@ h1{
     width: 90px;
     height: 90px;
   } 
+  #placeholder1 {
+    height: 20px;
+  } 
+  #placeholder2 {
+    height: 20px;
+  } 
+  #placeholder3 {
+    height: 40px;
+  } 
+  #placeholder4 {
+    height: 40px;
+  } 
+  
 }
 @media (min-width: 410px){
   #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
@@ -154,7 +167,7 @@ h1{
     height: 40px;
   } 
   #placeholder4 {
-    height: 40px;
+    height: 80px;
   } 
 }
 
