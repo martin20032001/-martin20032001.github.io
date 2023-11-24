@@ -1,173 +1,182 @@
-const canvas = document.getElementById('game');
-const context = canvas.getContext('2d');
-const grid = 15;
-const paddleHeight = grid * 5; // 80
-const maxPaddleY = canvas.height - grid - paddleHeight;
+var canvas = document.getElementById('game');
+var context = canvas.getContext('2d');
 
-var paddleSpeed = 5;
-var ballSpeed = 1;
+const video = document.getElementById('video')
 
-const leftPaddle = {
-  // start in the middle of the game on the left side
-  x: grid * 2,
-  y: canvas.height / 2 - paddleHeight / 2,
-  width: grid,
-  height: paddleHeight,
+// the canvas width & height, snake x & y, and the apple x & y, all need to be a multiples of the grid size in order for collision detection to work
+// (e.g. 16 * 25 = 400)
+var grid = 16;
+var count = 0;
 
-  // paddle velocity
-  dy: 0
+var snake = {
+  x: 160,
+  y: 160,
+
+  // snake velocity. moves one grid length every frame in either the x or y direction
+  dx: grid,
+  dy: 0,
+
+  // keep track of all grids the snake body occupies
+  cells: [],
+
+  // length of the snake. grows when eating an apple
+  maxCells: 4
 };
-const rightPaddle = {
-  // start in the middle of the game on the right side
-  x: canvas.width - grid * 3,
-  y: canvas.height / 2 - paddleHeight / 2,
-  width: grid,
-  height: paddleHeight,
-
-  // paddle velocity
-  dy: 0
-};
-const ball = {
-  // start in the middle of the game
-  x: canvas.width / 2,
-  y: canvas.height / 2,
-  width: grid,
-  height: grid,
-
-  // keep track of when need to reset the ball position
-  resetting: false,
-
-  // ball velocity (start going to the top-right corner)
-  dx: ballSpeed,
-  dy: -ballSpeed
+var apple = {
+  x: 320,
+  y: 320
 };
 
-// check for collision between two objects using axis-aligned bounding box (AABB)
-// @see https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-function collides(obj1, obj2) {
-  return obj1.x < obj2.x + obj2.width &&
-         obj1.x + obj1.width > obj2.x &&
-         obj1.y < obj2.y + obj2.height &&
-         obj1.y + obj1.height > obj2.y;
+Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/models')
+  ])
+
+  function startVideo() {
+    navigator.getUserMedia(
+      { video: {} },
+      stream => video.srcObject = stream,
+      err => noPermission()
+    )
+  }
+startVideo()  
+  video.addEventListener('play', () => {
+
+   
+    created =true
+  
+    setInterval(async () => {
+      var detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+      
+      detections.forEach(result => {
+      const {expressions} = result
+      happiness = transformresult(expressions.happy);
+      surprised = transformresult(expressions.surprised);
+      sad = transformresult(expressions.sad);
+      disgusted = transformresult(expressions.disgusted);
+      performAction(happiness,surprised,sad,disgusted)
+  
+      
+      })
+    }, 100)
+    
+  })
+
+// get random whole numbers in a specific range
+// @see https://stackoverflow.com/a/1527820/2124254
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function transformresult(value){
+    if (value > 1){
+      value = 0
+    } else if (value < 0.00001){
+      value = 0
+    }
+    return value
+  }
 // game loop
 function loop() {
   requestAnimationFrame(loop);
+
+  // slow game loop to 15 fps instead of 60 (60/15 = 4)
+  if (++count < 4) {
+    return;
+  }
+
+  count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
 
-  // move paddles by their velocity
-  leftPaddle.y += leftPaddle.dy;
-  rightPaddle.y += rightPaddle.dy;
+  // move snake by it's velocity
+  snake.x += snake.dx;
+  snake.y += snake.dy;
 
-  // prevent paddles from going through walls
-  if (leftPaddle.y < grid) {
-    leftPaddle.y = grid;
+  // wrap snake position horizontally on edge of screen
+  if (snake.x < 0) {
+    snake.x = canvas.width - grid;
   }
-  else if (leftPaddle.y > maxPaddleY) {
-    leftPaddle.y = maxPaddleY;
-  }
-
-  if (rightPaddle.y < grid) {
-    rightPaddle.y = grid;
-  }
-  else if (rightPaddle.y > maxPaddleY) {
-    rightPaddle.y = maxPaddleY;
+  else if (snake.x >= canvas.width) {
+    snake.x = 0;
   }
 
-  // draw paddles
-  context.fillStyle = 'white';
-  context.fillRect(leftPaddle.x, leftPaddle.y, leftPaddle.width, leftPaddle.height);
-  context.fillRect(rightPaddle.x, rightPaddle.y, rightPaddle.width, rightPaddle.height);
-
-  // move ball by its velocity
-  ball.x += ball.dx;
-  ball.y += ball.dy;
-
-  // prevent ball from going through walls by changing its velocity
-  if (ball.y < grid) {
-    ball.y = grid;
-    ball.dy *= -1;
+  // wrap snake position vertically on edge of screen
+  if (snake.y < 0) {
+    snake.y = canvas.height - grid;
   }
-  else if (ball.y + grid > canvas.height - grid) {
-    ball.y = canvas.height - grid * 2;
-    ball.dy *= -1;
+  else if (snake.y >= canvas.height) {
+    snake.y = 0;
   }
 
-  // reset ball if it goes past paddle (but only if we haven't already done so)
-  if ( (ball.x < 0 || ball.x > canvas.width) && !ball.resetting) {
-    ball.resetting = true;
+  // keep track of where snake has been. front of the array is always the head
+  snake.cells.unshift({x: snake.x, y: snake.y});
 
-    // give some time for the player to recover before launching the ball again
-    setTimeout(() => {
-      ball.resetting = false;
-      ball.x = canvas.width / 2;
-      ball.y = canvas.height / 2;
-    }, 400);
+  // remove cells as we move away from them
+  if (snake.cells.length > snake.maxCells) {
+    snake.cells.pop();
   }
 
-  // check to see if ball collides with paddle. if they do change x velocity
-  if (collides(ball, leftPaddle)) {
-    ball.dx *= -1;
+  // draw apple
+  context.fillStyle = 'red';
+  context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
-    // move ball next to the paddle otherwise the collision will happen again
-    // in the next frame
-    ball.x = leftPaddle.x + leftPaddle.width;
-  }
-  else if (collides(ball, rightPaddle)) {
-    ball.dx *= -1;
+  // draw snake one cell at a time
+  context.fillStyle = 'green';
+  snake.cells.forEach(function(cell, index) {
 
-    // move ball next to the paddle otherwise the collision will happen again
-    // in the next frame
-    ball.x = rightPaddle.x - ball.width;
-  }
+    // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);
 
-  // draw ball
-  context.fillRect(ball.x, ball.y, ball.width, ball.height);
+    // snake ate apple
+    if (cell.x === apple.x && cell.y === apple.y) {
+      snake.maxCells++;
 
-  // draw walls
-  context.fillStyle = 'lightgrey';
-  context.fillRect(0, 0, canvas.width, grid);
-  context.fillRect(0, canvas.height - grid, canvas.width, canvas.height);
+      // canvas is 400x400 which is 25x25 grids
+      apple.x = getRandomInt(0, 25) * grid;
+      apple.y = getRandomInt(0, 25) * grid;
+    }
 
-  // draw dotted line down the middle
-  for (let i = grid; i < canvas.height - grid; i += grid * 2) {
-    context.fillRect(canvas.width / 2 - grid / 2, i, grid, grid);
-  }
+    // check collision with all cells after this one (modified bubble sort)
+    for (var i = index + 1; i < snake.cells.length; i++) {
+
+      // snake occupies same space as a body part. reset game
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        snake.x = 160;
+        snake.y = 160;
+        snake.cells = [];
+        snake.maxCells = 4;
+        snake.dx = grid;
+        snake.dy = 0;
+
+        apple.x = getRandomInt(0, 25) * grid;
+        apple.y = getRandomInt(0, 25) * grid;
+      }
+    }
+  });
 }
 
-// listen to keyboard events to move the paddles
-document.addEventListener('keydown', function(e) {
-
-  // up arrow key
-  if (e.which === 38) {
-    rightPaddle.dy = -paddleSpeed;
-  }
-  // down arrow key
-  else if (e.which === 40) {
-    rightPaddle.dy = paddleSpeed;
-  }
-
-  // w key
-  if (e.which === 87) {
-    leftPaddle.dy = -paddleSpeed;
-  }
-  // a key
-  else if (e.which === 83) {
-    leftPaddle.dy = paddleSpeed;
-  }
-});
-
-// listen to keyboard events to stop the paddle if key is released
-document.addEventListener('keyup', function(e) {
-  if (e.which === 38 || e.which === 40) {
-    rightPaddle.dy = 0;
-  }
-
-  if (e.which === 83 || e.which === 87) {
-    leftPaddle.dy = 0;
-  }
-});
+function performAction(ha, sa, di, su){
+    if (ha > 0.8 && snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+      }
+      else if (sa > 0.8 && snake.dy === 0) {
+        snake.dy = -grid;
+        snake.dx = 0;
+      }
+      // right arrow key
+      else if (di > 0.8 && snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+      }
+      // down arrow key
+      else if (su > 0.9 && snake.dy === 0) {
+        snake.dy = grid;
+        snake.dx = 0;
+      }
+}
 
 // start the game
 requestAnimationFrame(loop);
