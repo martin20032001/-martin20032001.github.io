@@ -29,3 +29,42 @@ h1{
     height:100%;
     z-index:20;
    }
+
+
+   @media (min-width: 0px){
+    #placeholder1 {
+      height: 10px;
+    } 
+    #placeholder2 {
+      height: 15px;
+    } 
+    #placeholder3 {
+      height: 20px;
+    }  
+  }
+
+  @media (min-width: 800px){
+    #placeholder1 {
+      height: 30px;
+    } 
+    #placeholder2 {
+      height: 30px;
+    } 
+    #placeholder3 {
+      height: 50px;
+    } 
+ 
+  }
+
+  @media (min-width: 1000px){
+    #placeholder1 {
+      height: 40px;
+    } 
+    #placeholder2 {
+      height: 40px;
+    } 
+    #placeholder3 {
+      height: 80px;
+    } 
+
+  }
