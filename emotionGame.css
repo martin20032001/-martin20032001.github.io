@@ -14,8 +14,10 @@ html, body {
     outline: 1px solid white;
     max-width: 100%;
     max-height: 100%;
-    /*
-    set aspect-ratio to canvas width/height
-    */
     aspect-ratio: 640/480;
   }
+
+  h1{
+    color: azure;
+    text-shadow: 1em;
+}
