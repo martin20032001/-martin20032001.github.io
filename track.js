@@ -13,6 +13,7 @@ var tracked = false;
 var currentWidth = 0;
 
 
+
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
@@ -24,8 +25,18 @@ function startVideo() {
   navigator.getUserMedia(
     { video: {} },
     stream => video.srcObject = stream,
-    err => console.error(err)
+    
+    err => noPermission()
+    
+    
   )
+}
+
+function noPermission(){
+  
+  alert("give access to the camera")
+  window.location.href = 'track.html';
+  
 }
 
 video.addEventListener('play', () => {
@@ -81,27 +92,30 @@ function stopVideo() {
 }
 
 startButton.addEventListener('click', function(){
-  if (!running){
-    running=true;
-    startVideo();
-    startButton.innerHTML="Stop"
-    trackingDiv.style.visibility="visible"
-
-  } else{
-    running = false;
-    trackingGridDiv.style.visibility="hidden"
-    startButton.innerHTML="Start"
-    canvas2.style.visibility="hidden"
   
-    stopVideo();
-    tracking=false;
-    if (tracked) {
-      tracked=false;
-      var button = new bootstrap.Button(trackingButton)
-      button.toggle()
-    }
+    if (!running){
+      running=true;
+      startVideo();
+      startButton.innerHTML="Stop"
+      trackingDiv.style.visibility="visible"
+  
+    } else{
+      running = false;
+      trackingGridDiv.style.visibility="hidden"
+      startButton.innerHTML="Start"
+      canvas2.style.visibility="hidden"
     
+      stopVideo();
+      tracking=false;
+      if (tracked) {
+        tracked=false;
+        var button = new bootstrap.Button(trackingButton)
+        button.toggle()
+      }
   }
+  
+    
+  
 }); 
 
 trackingButton.addEventListener('click', function(){

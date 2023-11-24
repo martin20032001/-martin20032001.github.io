@@ -47,9 +47,17 @@ function startVideo() {
   navigator.getUserMedia(
     { video: {} },
     stream => video.srcObject = stream,
-    err => console.error(err)
+    err => noPermission()
   )
 }
+
+function noPermission(){
+  
+  alert("Give access to the camera")
+  window.location.href = 'showemotions.html';
+  
+}
+
 
 video.addEventListener('play', () => {
 

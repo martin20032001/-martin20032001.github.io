@@ -10,11 +10,11 @@ body {
     background: rgb(118,231,255);
     background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
 }
+
 h1{
     color: azure;
     text-shadow: 1em;
 }
-
 
 #container2{
     position:relative;
@@ -30,8 +30,7 @@ h1{
     z-index:20;
    }
 
-
-   @media (min-width: 0px){
+@media (min-width: 0px){
     #placeholder1 {
       height: 10px;
     } 
@@ -41,9 +40,9 @@ h1{
     #placeholder3 {
       height: 20px;
     }  
-  }
+}
 
-  @media (min-width: 800px){
+@media (min-width: 800px){
     #placeholder1 {
       height: 30px;
     } 
@@ -54,9 +53,9 @@ h1{
       height: 50px;
     } 
  
-  }
+}
 
-  @media (min-width: 1000px){
+@media (min-width: 1000px){
     #placeholder1 {
       height: 40px;
     } 
@@ -67,4 +66,4 @@ h1{
       height: 80px;
     } 
 
-  }
+}
