@@ -4,7 +4,8 @@ html, body {
   }
 
   body {
-    background: black;
+    background: rgb(118,231,255);
+    background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
     display: flex;
     align-items: center;
     justify-content: center;
