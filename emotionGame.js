@@ -38,16 +38,17 @@ Promise.all([
   ])
 
   function startVideo() {
+    
     navigator.getUserMedia(
       { video: {} },
       stream => video.srcObject = stream,
-      err => noPermission()
+      err => console.log(err)
     )
   }
 
   video.addEventListener('play', () => {
 
-   
+    console.log("hi")
     created =true
   
     setInterval(async () => {
@@ -59,6 +60,7 @@ Promise.all([
       surprised = transformresult(expressions.surprised);
       sad = transformresult(expressions.sad);
       disgusted = transformresult(expressions.disgusted);
+      
       performAction(happiness,sad,disgusted,surprised)
   
       
@@ -181,12 +183,12 @@ function performAction(ha, sa, di, su){
         snake.dx = 0;
       }
       // right arrow key
-      else if (sa > 0.8 && snake.dx === 0) {
+      else if (di > 0.8 && snake.dx === 0) {
         snake.dx = grid;
         snake.dy = 0;
       }
       // down arrow key
-      else if (di > 0.8 && snake.dy === 0) {
+      else if (sa > 0.8 && snake.dy === 0) {
         snake.dy = grid;
         snake.dx = 0;
       }
@@ -195,6 +197,7 @@ function performAction(ha, sa, di, su){
 
 startButton.addEventListener('click', function(){
     if (!running){
+        
       running=true;
       startVideo();
       requestAnimationFrame(loop);
@@ -250,3 +253,4 @@ document.addEventListener('keydown', function(e) {
       snake.dx = 0;
     }
   });
+
