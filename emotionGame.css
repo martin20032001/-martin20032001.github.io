@@ -28,6 +28,8 @@ html, body {
     height: 10px;
 } 
 
+
+
 #placeholder2 {
     height: 10px;
 } 
@@ -112,25 +114,20 @@ html, body {
     #placeholder1,#placeholder2,#placeholder3,#placeholder4,#placeholder5{
         height: 1px;
     }
-    #start-button{
+    #start-button,#backButton{
         font-size: 5px;
     }
-    #circle-happy,#circle-sad{
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
         width: 0px;
         height: 0px;
-        visibility: hidden;
+        border:0px;
     }
-    #circle-surprised,#circle-disgusted{
-        width: 0px;
-        height: 0px;
-        visibility: hidden;
-    } 
   }
 
 
-  @media (min-width: 200px) and (min-height:300px){
+  @media (min-width: 200px) and (min-height:250px){
     canvas{
-        width:80%;
+        width:50%;
         height: 100%;
     }
     h1{
@@ -139,37 +136,17 @@ html, body {
     #placeholder1,#placeholder2,#placeholder3,#placeholder4,#placeholder5{
         height: 5px;
     }
-    #start-button{
+    #start-button,#backButton{
         font-size: 10px;
     }
-    #circle-happy,#circle-sad{
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
         width: 0px;
         height: 0px;
-        visibility: hidden;
+
     }
-    #circle-surprised,#circle-disgusted{
-        width: 0px;
-        height: 0px;
-        visibility: hidden;
-    } 
   }
 
-  @media (min-width: 380px) and (min-height:350px){
-    canvas{
-        width:350px;
-        height: 350px;
-    }
-    h1{
-        font-size: small;
-    }
-    #placeholder1,#placeholder2,#placeholder3,#placeholder4,#placeholder5{
-        height: 5px;
-    }
-    #start-button{
-        font-size: 10px;
-    }
-
-  }
+ 
 
 
 
@@ -180,33 +157,25 @@ html, body {
         height: 100%;
     }
     h1{
-        font-size: small;
+        font-size: 20px;
     }
     #placeholder1,#placeholder2,#placeholder3,#placeholder4,#placeholder5{
-        height: 5px;
+        height: 10px;
     }
-    #start-button{
-        font-size: 10px;
+    #placeholder4{
+        height: 30px;
+    }
+    #start-button,#backButton{
+        font-size: 20px;
     }
     #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
         width: 50px;
         height: 50px;
-        visibility: visible;
+        border: 2px;
     }
   }
 
-  @media (min-height: 800px){
-    canvas{
-        width: 60%;
-        height: 100%;
-    }
 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
-        width: 80px;
-        height: 80px;
-
-    }
-  }
 
 
   @media (min-width: 800px){

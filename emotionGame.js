@@ -1,6 +1,7 @@
 
 const startButton = document.getElementById('start-button')
 const video = document.getElementById('video')
+const homeSite = "index.html"
 
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -254,3 +255,11 @@ document.addEventListener('keydown', function(e) {
     }
   });
 
+
+  backButton.addEventListener('click', function(){
+    if (running){
+      stopVideo();
+    }
+    window.location.href = homeSite;
+  
+  }); 
