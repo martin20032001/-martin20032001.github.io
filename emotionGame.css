@@ -6,11 +6,12 @@ html, body {
   body {
     background: rgb(118,231,255);
     background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
-    display: flex;
     align-items: center;
     justify-content: center;
   }
   canvas {
+    min-width: 100px;
+    min-height: 100px;
     outline: 1px solid white;
     max-width: 100%;
     max-height: 100%;
@@ -21,3 +22,131 @@ html, body {
     color: azure;
     text-shadow: 1em;
 }
+
+#placeholder1 {
+    height: 10px;
+} 
+
+#placeholder2 {
+    height: 10px;
+} 
+
+#placeholder3 {
+    height: 20px;
+} 
+#placeholder4 {
+    height: 30px;
+} 
+#placeholder5 {
+    height: 30px;
+} 
+#placeholder6 {
+    height: 30px;
+} 
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+  }
+.circle-container-right {
+    margin-left: 10%;    
+}
+.circle-container-left{
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+  
+
+#circle-happy {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image:url("happy.png"),linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+    background-size: cover;
+}
+
+#circle-surprised {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image:url("surprised.png"), linear-gradient(0deg, #e809bf 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+    background-size: cover;
+  }
+
+  #circle-sad {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image:url("sad.png"), linear-gradient(0deg, #091fe8 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+    background-size: cover;
+  }
+
+  #circle-disgusted {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image:url("disgusted.png"), linear-gradient(0deg, #36e809 100%, #3f48cc00 0%);
+    background-clip: padding-box;
+    background-size: cover;
+  }
+
+
+@media (min-width: 0px) and (min-height:0px){
+    canvas{
+        width: 100x;
+        height: 100px;
+    }
+  }
+
+
+  @media (min-width: 300px) and (min-height:300px){
+    canvas{
+        width: 200x;
+        height: 200px;
+    }
+  }
+
+ 
+
+  @media (min-width: 700px) and (min-height:500px){
+    canvas{
+        width: 300px;
+        height: 300px;
+    }
+  }
+  @media (min-width: 0px) and (min-height:0px){
+    #circle-happy,#circle-surprised,#circle-sad,#circle-disgusted{
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+  }
+  @media (min-width: 220px) and (min-height:220px){
+    #circle-happy,#circle-surprised,#circle-sad,#circle-disgusted{
+        visibility: visible;
+        width: 20px;
+        height: 20px;
+    }
+  }
+  @media (min-width: 300px) and (min-height:300px){
+    #circle-happy,#circle-surprised,#circle-sad,#circle-disgusted{
+        width: 50px;
+        height: 50px;
+    }
+  }
+
+  @media (min-width: 400px) and (min-height:400px){
+    #circle-happy,#circle-surprised,#circle-sad,#circle-disgusted{
+        width: 100px;
+        height: 100px;
+    }
+  }
+  

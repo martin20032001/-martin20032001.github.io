@@ -1,7 +1,10 @@
+
+const startButton = document.getElementById('start-button')
+const video = document.getElementById('video')
+
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
-
-const video = document.getElementById('video')
+var running = false;
 
 // the canvas width & height, snake x & y, and the apple x & y, all need to be a multiples of the grid size in order for collision detection to work
 // (e.g. 16 * 25 = 400)
@@ -41,7 +44,7 @@ Promise.all([
       err => noPermission()
     )
   }
-startVideo()  
+
   video.addEventListener('play', () => {
 
    
@@ -56,7 +59,7 @@ startVideo()
       surprised = transformresult(expressions.surprised);
       sad = transformresult(expressions.sad);
       disgusted = transformresult(expressions.disgusted);
-      performAction(happiness,surprised,sad,disgusted)
+      performAction(happiness,sad,disgusted,surprised)
   
       
       })
@@ -80,10 +83,13 @@ function transformresult(value){
   }
 // game loop
 function loop() {
-  requestAnimationFrame(loop);
+    if (running){
+    requestAnimationFrame(loop);
+    
+  
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  if (++count < 4) {
+  if (++count < 6) {
     return;
   }
 
@@ -143,40 +149,104 @@ function loop() {
 
       // snake occupies same space as a body part. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        snake.x = 160;
-        snake.y = 160;
-        snake.cells = [];
-        snake.maxCells = 4;
-        snake.dx = grid;
-        snake.dy = 0;
-
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
+        lostGame();
       }
+      
     }
+
   });
+} 
 }
 
+function lostGame() {
+    snake.x = 160;
+    snake.y = 160;
+    snake.cells = [];
+    snake.maxCells = 4;
+    snake.dx = grid;
+    snake.dy = 0;
+    apple.x = getRandomInt(0, 25) * grid;
+    apple.y = getRandomInt(0, 25) * grid; 
+}
+
+
+
 function performAction(ha, sa, di, su){
-    if (ha > 0.8 && snake.dx === 0) {
+    if (su > 0.8 && snake.dx === 0) {
         snake.dx = -grid;
         snake.dy = 0;
       }
-      else if (sa > 0.8 && snake.dy === 0) {
+      else if (ha > 0.8 && snake.dy === 0) {
         snake.dy = -grid;
         snake.dx = 0;
       }
       // right arrow key
-      else if (di > 0.8 && snake.dx === 0) {
+      else if (sa > 0.8 && snake.dx === 0) {
         snake.dx = grid;
         snake.dy = 0;
       }
       // down arrow key
-      else if (su > 0.9 && snake.dy === 0) {
+      else if (di > 0.8 && snake.dy === 0) {
         snake.dy = grid;
         snake.dx = 0;
       }
 }
 
-// start the game
-requestAnimationFrame(loop);
+
+startButton.addEventListener('click', function(){
+    if (!running){
+      running=true;
+      startVideo();
+      requestAnimationFrame(loop);
+      startButton.innerHTML="Stop"
+      lostGame()
+    } else{
+        running = false;
+        startButton.innerHTML="Start"
+        stopVideo();
+  
+    }
+  }); 
+
+  function stopVideo() {
+    let video = document.querySelector('video'); // Holen des Videoelements
+    let stream = video.srcObject; // Zugriff auf den Stream
+  
+    if (stream) {
+      let tracks = stream.getTracks(); // Holen der Tracks des Streams
+      tracks.forEach(track => track.stop()); // Stoppen aller Tracks
+  
+      // Leeren des Video-Elements und des Stream-Objekts
+      video.srcObject = null;
+    }
+  }
+
+
+  // listen to keyboard events to move the snake
+document.addEventListener('keydown', function(e) {
+    // prevent snake from backtracking on itself by checking that it's 
+    // not already moving on the same axis (pressing left while moving
+    // left won't do anything, and pressing right while moving left
+    // shouldn't let you collide with your own body)
+    
+    // left arrow key
+    if (e.which === 37 && snake.dx === 0) {
+      snake.dx = -grid;
+      snake.dy = 0;
+    }
+    // up arrow key
+    else if (e.which === 38 && snake.dy === 0) {
+      snake.dy = -grid;
+      snake.dx = 0;
+    }
+    // right arrow key
+    else if (e.which === 39 && snake.dx === 0) {
+      snake.dx = grid;
+      snake.dy = 0;
+    }
+    // down arrow key
+    else if (e.which === 40 && snake.dy === 0) {
+      snake.dy = grid;
+      snake.dx = 0;
+    }
+  });
