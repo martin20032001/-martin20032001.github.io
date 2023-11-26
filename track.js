@@ -114,6 +114,7 @@ startButton.addEventListener('click', function(){
         var button = new bootstrap.Button(trackingButton)
         button.toggle()
       }
+      trackingDiv.style.visibility="hidden"
   }
   
     
