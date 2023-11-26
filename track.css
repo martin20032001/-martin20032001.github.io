@@ -21,41 +21,67 @@ h1{
      z-index:10;
 }
 
-.video, #trackingGridDiv {
+.video, #trackingGridDiv {                 
     position:absolute;
     left:0;
     top:0;
-    z-index:20;
+    z-index:20;                                        
     width: 100%;
     height: auto; /* oder eine bestimmte Aspect Ratio */
    }
 
-@media (min-width: 0px){
+
+
+
+@media (min-height: 0px){
     #placeholder1 {
-      height: 10px;
+      height: 5px;
     } 
     #placeholder2 {
-      height: 15px;
+      height: 5px;
     } 
     #placeholder3 {
-      height: 20px;
+      height: 5px;
     }  
+    #backButton,#start-button,#trackButton {
+      font-size: 10px; 
+  }
 }
 
-@media (min-width: 800px){
-    #placeholder1 {
-      height: 30px;
-    } 
-    #placeholder2 {
-      height: 30px;
+
+@media (min-height: 620px){
+  #placeholder1,#placeholder2 {
+    height: 5px;
+  } 
+  #placeholder3 {
+    height: 10px;
+  } 
+  #backButton,#start-button,#trackButton {
+      font-size: 15px; 
+  }
+
+}
+
+@media (min-height: 640px){
+  #placeholder1,#placeholder2 {
+    height: 10px;
+  } 
+  #placeholder3 {
+    height: 20px;
+  } 
+  
+}
+
+@media (min-height: 677px){
+    #placeholder1,#placeholder2 {
+      height: 20px;
     } 
     #placeholder3 {
-      height: 50px;
+      height: 30px;
     } 
- 
 }
 
-@media (min-width: 1000px){
+@media (min-height: 760px){
     #placeholder1 {
       height: 40px;
     } 
@@ -65,5 +91,43 @@ h1{
     #placeholder3 {
       height: 80px;
     } 
+    #backButton,#start-button,#trackButton {
+      font-size: 20px; 
+  }
+}
+@media (max-height: 577px){
+  #container2 {                 
+    width: 500px;
+   }
+}
+
+@media (max-height: 470px){
+  #container2 {                 
+    width: 400px;
+   }
+}
+
+@media (max-height: 400px){
+  #container2 {                 
+    width: 300px;
+   }
+   h1{
+    font-size: 15px;
+   }
+}
+@media (max-height: 330px){
+  #container2 {                 
+    width: 200px;
+   }
+   h1{
+    font-size: 10px;
+   }
+}
+
+@media (max-width: 273px){
+    
+  #backButton,#start-button,#trackButton {
+    font-size: 7px; 
+  }
 
 }

@@ -98,9 +98,11 @@ startButton.addEventListener('click', function(){
       startVideo();
       startButton.innerHTML="Stop"
       trackingDiv.style.visibility="visible"
+      
   
     } else{
       running = false;
+      
       trackingGridDiv.style.visibility="hidden"
       startButton.innerHTML="Start"
       canvas2.style.visibility="hidden"
