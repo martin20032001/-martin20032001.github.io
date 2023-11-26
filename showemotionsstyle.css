@@ -6,37 +6,55 @@
     visibility: hidden;
 }
 
+#infoButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  font-size: 15px;
+}
+
 body {
     
     background: rgb(118,231,255);
     background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
 }
+
+
 h1{
     color: azure;
     text-shadow: 1em;
 }
 
 .circle-container {
-  display: flex;
+  
+  width: 60%;
+  height: 60%;
+  
   justify-content: center;
 }
 
 #circle-happy {
-    width: 100px;
-    height: 100px;
-    border: 8px solid black;
+    min-width: 50px;
+    min-height: 50px;
+    padding-top: 100%; 
+    
+
+    border: 2px solid black;
     border-radius: 50%;
     background-image:url("happy.png"),linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
     background-clip: padding-box;
     background-size: cover;
     
+ 
 }
 
 #circle-neutral{
-  
-  width: 100px;
-  height: 100px;
-  border: 8px solid black;
+  min-width: 50px;
+  min-height: 50px;
+
+  padding-top: 100%; 
+  border: 2px solid black;
   border-radius: 50%;
   background-image:url("neutral.png"), linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
   background-clip: padding-box;
@@ -44,12 +62,11 @@ h1{
   
 }
 
-
-
 #circle-angry{
-  width: 100px;
-  height: 100px;
-  border: 8px solid black;
+  min-width: 50px;
+  min-height: 50px;
+  padding-top: 100%; 
+  border: 2px solid black;
   border-radius: 50%;
   background-image:url("angry.png"),linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
   background-clip: padding-box;
@@ -57,9 +74,10 @@ h1{
 }
 
 #circle-surprised {
-  width: 100px;
-  height: 100px;
-  border: 8px solid black;
+  min-width: 50px;
+  min-height: 50px;
+  padding-top: 100%; 
+  border: 2px solid black;
   border-radius: 50%;
   background-image:url("surprised.png"), linear-gradient(0deg, #e809bf 100%, #3f48cc00 0%);
   background-clip: padding-box;
@@ -67,9 +85,10 @@ h1{
 }
 
 #circle-sad {
-  width: 100px;
-  height: 100px;
-  border: 8px solid black;
+  min-width: 50px;
+    min-height: 50px;
+    padding-top: 100%; 
+  border: 2px solid black;
   border-radius: 50%;
   background-image:url("sad.png"), linear-gradient(0deg, #091fe8 100%, #3f48cc00 0%);
   background-clip: padding-box;
@@ -77,9 +96,10 @@ h1{
 }
 
 #circle-disgusted {
-  width: 100px;
-  height: 100px;
-  border: 8px solid black;
+  min-width: 50px;
+    min-height: 50px;
+    padding-top: 100%; 
+  border: 2px solid black;
   border-radius: 50%;
   background-image:url("disgusted.png"), linear-gradient(0deg, #36e809 100%, #3f48cc00 0%);
   background-clip: padding-box;
@@ -95,131 +115,6 @@ h1{
 
 
 
-@media (min-width: 0px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 50px;
-    height: 50px;
-  } 
-  #placeholder1 {
-    height: 10px;
-  } 
-  #placeholder2 {
-    height: 10px;
-  } 
-  #placeholder3 {
-    height: 10px;
-  } 
-  #placeholder4 {
-    height: 10px;
-  } 
-}
-@media (min-width: 140px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 80px;
-    height: 80px;
-  } 
-}
-@media (min-width: 200px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 120px;
-    height: 120px;
-  } 
-}
-@media (min-width: 280px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 150px;
-    height: 150px;
-  } 
-}
-@media (min-width: 345px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 90px;
-    height: 90px;
-  } 
-  #placeholder1 {
-    height: 20px;
-  } 
-  #placeholder2 {
-    height: 20px;
-  } 
-  #placeholder3 {
-    height: 40px;
-  } 
-  #placeholder4 {
-    height: 40px;
-  } 
-  
-}
-@media (min-width: 410px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 110px;
-    height: 110px;
-  } 
-}
-@media (min-width: 470px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 130px;
-    height: 130px;
-  } 
-}
-@media (min-width: 500px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 140px;
-    height: 140px;
-  } 
-  #placeholder1 {
-    height: 20px;
-  } 
-  #placeholder2 {
-    height: 20px;
-  } 
-  #placeholder3 {
-    height: 40px;
-  } 
-  #placeholder4 {
-    height: 80px;
-  } 
-}
-
-
-@media (min-width: 600px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 150px;
-    height: 150px;
-  } 
-}
-@media (min-width: 780px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 170px;
-    height: 170px;
-  } 
-}
-@media (min-width: 800px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 200px;
-    height: 200px;
-  } 
-}
-
-@media (min-width: 900px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 210px;
-    height: 210px;
-  } 
-}
-
-@media (min-width: 1000px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 250px;
-    height: 250px;
-  } 
-}
-@media (min-width: 1200px){
-  #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted,#circle-neutral,#circle-angry {
-    width: 300px;
-    height: 300px;
-  } 
-}
 
 
 
@@ -239,6 +134,139 @@ h1{
   100% {
     color: rgb(255, 0, 0);
   }
+}
+
+
+
+@media (min-height: 0px){
+  #placeholder1 {
+    height: 5px;
+  } 
+  #placeholder2 {
+    height: 5px;
+  } 
+  #placeholder3 {
+    height: 5px;
+  }  
+  #placeholder4{
+    height: 5px;
+  }
+  #backButton,#start-button,#infoButton {
+    font-size: 10px; 
+}
+}
+
+
+@media (min-height: 620px){
+#placeholder1,#placeholder2 {
+  height: 5px;
+} 
+#placeholder3 {
+  height: 10px;
+} 
+#placeholder4{
+  height: 10px;
+}
+#backButton,#start-button,#infoButton {
+    font-size: 15px; 
+}
+
+}
+
+@media (min-height: 640px){
+#placeholder1,#placeholder2 {
+  height: 10px;
+} 
+#placeholder3 {
+  height: 20px;
+} 
+#placeholder4{
+  height: 20px;
+}
+
+}
+
+@media (min-height: 677px){
+  #placeholder1,#placeholder2 {
+    height: 20px;
+  } 
+  #placeholder3 {
+    height: 30px;
+  } 
+}
+
+@media (min-height: 760px){
+  #placeholder1 {
+    height: 40px;
+  } 
+  #placeholder2 {
+    height: 40px;
+  } 
+  #placeholder3 {
+    height: 80px;
+  } 
+  #backButton,#start-button,#trackButton,#infoButton {
+    font-size: 20px; 
+}
+}
+
+@media (max-height: 570px){
+#container2 {                 
+  width: 320px;
+ }
+}
+
+@media (max-height: 400px){
+#container2 {                 
+  width: 300px;
+ }
+ h1{
+  font-size: 15px;
+ }
+}
+@media (max-height: 330px){
+#container2 {                 
+  width: 200px;
+ }
+ h1{
+  font-size: 10px;
+ }
+ #infoButton{
+  font-size: 5px;
+  
+} 
+}
+@media (max-height: 300px){
+#container2 {                 
+  width: 100px;
+ }
+ h1{
+  font-size: 10px;
+ }
+ #infoButton{
+  font-size: 5px;
+  
+} 
+}
+
+@media (max-width: 273px){
+  
+#backButton,#start-button,#trackButton,#infoButton {
+  font-size: 7px; 
+}
+}
+
+@media (max-width: 330px){
+  
+#container2 {                 
+  width: 200px;
+ }
+}
+@media (max-width: 270px){
+  
+#container2 {                 
+  width: 100%;
+ }
 }
 
 

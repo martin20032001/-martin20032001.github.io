@@ -12,82 +12,115 @@
 </head>
 
 <body>
-  <div class="container text-center">
+  <div class="container">
 
     <div id="placeholder1" class="row"></div>
     
-      <div class="row">
-        <div class="col">
-          <h1 id="temp">Emotion Meter</h1>
-        </div>
+    <div class="row">
+
+      <div class="col"></div>
+      </div>
+      <div class="col text-center">
+        <h1 id="temp">Emotion Meter</h1>
+      </div>
+      <div class="col"> 
+        <button id="infoButton" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          &#9432;
+        </button>
       </div>
 
-      <div id="placeholder2" class="row"></div>
+    </div>
 
-      <div class="row">
-        <div class="col text-center">
-          <button id="backButton" class="btn btn-outline-light btn-lg">&#x3c;</button>
-        </div>
-        <div class="col text-center">
-          <button id="start-button" class="btn btn-outline-light btn-lg">Start</button>
-        </div>
-        <div class="col text-center">
-          
-        </div>
+    <div id="placeholder2" class="row"></div>
+
+    <div class="row">
+      <div class="col text-end">
+        <button id="backButton" class="btn btn-outline-light btn-lg">&#x3c;</button>
       </div>
-
-      <div id="placeholder3" class="row"></div>
-
-      <div id="noDetection" class="nodetection">
-        <h2>No Face Detected</h2>
+      <div class="col text-start">
+        <button id="start-button" class="btn btn-outline-light btn-lg">Start</button>
       </div>
-      <div class="row">
-        <div class="video">
-          <video id="video" width="0" height="0" class="mw-100" autoplay muted></video>
-        </div>
-      </div>
-        
-      <div class="row">
-        <div class="col">
-          <div class="circle-container">
-            <div id = "circle-neutral" class="circle-fill">
-            </div>
-          </div>
-        </div>
+    </div>
 
-        <div class="col">
-          <div class="circle-container">
-            <div id = "circle-happy" class="circle-fill"></div>
-          </div>
-        </div>
+    <div id="placeholder3" class="row"></div>
 
-        <div class="col">
-          <div class="circle-container">
-            <div id = "circle-angry" class="circle-fill"></div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="circle-container">
+          <div id = "circle-neutral" class="circle-fill">
           </div>
         </div>
       </div>
-      <div id="placeholder4" class="row"></div>
-      <div class="row">
-        <div class="col">
-          <div class="circle-container">
-            <div id = "circle-surprised" class="circle-fill"></div>
-          </div>
-        </div>
 
-        <div class="col">
-          <div class="circle-container">
-            <div id = "circle-sad" class="circle-fill"></div>
-          </div>
+      <div class="col d-flex justify-content-center">
+        <div class="circle-container">
+          <div id = "circle-happy" class="circle-fill"></div>
         </div>
+      </div>
 
-        <div class="col">
-          <div class="circle-container">
-            <div id = "circle-disgusted" class="circle-fill"></div>
+      <div class="col d-flex justify-content-center">
+        <div class="circle-container">
+          <div id = "circle-angry" class="circle-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="placeholder4" class="row"></div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="circle-container">
+          <div id = "circle-surprised" class="circle-fill"></div>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="circle-container">
+          <div id = "circle-sad" class="circle-fill"></div>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="circle-container">
+          <div id = "circle-disgusted" class="circle-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="video">
+            <video id="video" width="0" height="0" class="mw-100" autoplay muted></video>
           </div>
         </div>
       </div>
+    </div>
   </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-md modal-lg modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Track your face. Press Start to grant permission to access your camera and start it. Then press Track to start the face tracking.<br>
+          <br>
+        <b>Notes in case of problems:</b><br>
+          <p>Can only be used on Google Chrome</p>
+          <p>Use the latest version of Google Chrome</p> 
+          <p>Probably not possible on Apple devices</p>
+          <p>Make sure that access to the camera is allowed (click on the "i" symbol to the left of the urls and grant access to the camera)</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
