@@ -1,8 +1,3 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 #track {
     visibility: hidden;
 }
@@ -10,6 +5,7 @@ html, body {
 #trackingGridDiv {
     visibility: hidden;
 }
+
 
 body {
     background: rgb(118,231,255);
@@ -19,14 +15,16 @@ body {
 h1{
     color: azure;
     text-shadow: 1em;
-    font-size: 3vw;
+    font-size: 6vw;
 }
+
 
 #container2{
     position:relative;
     z-index:10;
     text-align: center;
-    
+    width: 100vw;
+    max-width: 100%;
 }
 
 .video, #trackingGridDiv {               
@@ -46,13 +44,13 @@ h1{
     z-index: 1000;
     font-size: 3vw;
     text-align: center;
-    width: 3vw; /* Setzen Sie die Breite des Buttons */
-    height: 3vw; /* Setzen Sie die Höhe des Buttons auf denselben Wert wie die Breite */
-    line-height: 3vw; /* Hilft dabei, den Text vertikal zu zentrieren */
+    width: 4vw; /* Setzen Sie die Breite des Buttons */
+    height: 4vw; /* Setzen Sie die Höhe des Buttons auf denselben Wert wie die Breite */
+    line-height: 4vw; /* Hilft dabei, den Text vertikal zu zentrieren */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 0.6vw;
+    
   }
   
   #backButton{
@@ -62,19 +60,18 @@ h1{
     z-index: 1000;
     font-size: 3vw;
     text-align: center;
-    width: 3vw; 
-    height: 3vw; 
-    line-height: 3vw;
+    width: 4vw; 
+    height: 4vw; 
+    line-height: 4vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 1vw;
+    
   }
 
   #startButton,#trackButton{
     font-size: 2vw;
   }
-
 
 
 @media (min-height: 0px){
@@ -87,19 +84,21 @@ h1{
     #placeholder3 {
       height: 5px;
     }  
+   
 }
 
-@media (min-height: 500px){
+@media (min-height: 550px){
   #placeholder1,#placeholder2 {
     height: 5px;
   } 
   #placeholder3 {
     height: 10px;
   } 
+  
  
 }
 
-@media (min-height: 640px){
+@media (min-height: 690px){
   #placeholder1,#placeholder2 {
     height: 10px;
   } 
@@ -108,7 +107,7 @@ h1{
   } 
 }
 
-@media (min-height: 677px){
+@media (min-height: 700px){
     #placeholder1,#placeholder2 {
       height: 20px;
     } 
@@ -117,7 +116,7 @@ h1{
     } 
 }
 
-@media (min-height: 760px){
+@media (min-height: 800px){
     #placeholder1 {
       height: 40px;
     } 
@@ -126,62 +125,58 @@ h1{
     } 
     #placeholder3 {
       height: 80px;
-    } 
+    }   
 }
 
-@media (max-height: 590px){
-  #container2 {                 
-    width: 500px;
-   }
-}
 
-@media (max-height: 477px){
-  #container2 {                 
-    width: 450px;
-   }
-}
-
-@media (max-height: 410px){
-  #container2 {                 
-    width: 350px;
-   }
-}
-
-@media (max-height: 325px){
-  #container2 {                 
-    width: 250px;
-   }
-   
-   
-}
-@media (max-height: 260px){
-  #container2 {                 
-    width: 150px;
-   }
-}
-
-@media (max-height: 177px){
-  #container2 {                 
-    width: 100px;
+@media (min-width: 300px){
+  h1{
+    font-size: 5vw;
+  }
+  #infoButton,#backButton,#startButton,#trackButton{
+    font-size: 2vw;
+  }
+  #infoButton,#backButton{
+    width: 2vw; 
+    height: 2vw; 
+    
+  }
+  #container2{
+    width: 80vw;
   }
 }
 
-@media (max-width: 330px){
-  #container2 {                 
-    width: 200px;
-   }
+@media (min-width: 500px){
+  h1{
+    font-size: 3vw;
+  }
+  #infoButton,#backButton,#startButton,#trackButton{
+    font-size: 2vw;
+  }
+  #infoButton,#backButton{
+    width: 4vw; 
+    height: 4vw; 
+  }
+
+  #container2{
+    width: 60vw;
+  }
+  
 }
+@media (min-width: 700px){
+  h1{
+    font-size: 2vw;
+  }
+  #infoButton,#backButton,#startButton,#trackButton{
+    font-size: 1vw;
+  }
+  #infoButton,#backButton{
+    width: 3vw; 
+    height: 3vw; 
+  }
 
-@media (max-width: 270px){  
-  #container2 {                 
-    width: 100%;
-   }
+  #container2{
+    width: 40vw;
+  }
+  
 }
-
-@media (max-width: 120px){
-  #placeholder2 {
-    height: 30px;
-  } 
-}
-
-
