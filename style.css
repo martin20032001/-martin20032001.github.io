@@ -8,23 +8,64 @@ html, body {
 }
 h1{
   color: azure;
-  text-shadow: 1em;
-  font-size: 4vw;
-}
-#faceTrack,#emotionTrack,#emotionGame,#helpButton{
-  font-size: 2vw;
-  width: 20vw;
+  text-shadow: rgb(0, 0, 0) 1px 0 1px;
+  font-size: 6vw;
   
 }
 
+#faceTrack,#emotionTrack,#emotionGame,#helpButton{
+  font-size: 4vw;
+  width: 55vw;
+  
+}
 #placeholer1{
-  height: 2vw;
+  height: 5vw;
 }
 #placeholer2{
-  height: 3vw;
+  height: 5vw;
 }
 #placeholer3{
-  height: 2vw;
+  height: 5vw;
+}
+
+
+
+@media (min-width: 600px){
+  h1{
+    font-size: 5vw;
+  }
+  #faceTrack,#emotionTrack,#emotionGame,#helpButton{
+    font-size: 3vw;
+    width: 30vw;
+  }
+  #placeholer1{
+    height: 3vw;
+  }
+  #placeholer2{
+    height: 3vw;
+  }
+  #placeholer3{
+    height: 3vw;
+  }
+}
+
+@media (min-width: 1100px){
+  h1{
+    font-size: 4vw;
+  }
+  #faceTrack,#emotionTrack,#emotionGame,#helpButton{
+    font-size: 2vw;
+    width: 20vw;
+  }
+  #placeholer1{
+    height: 2vw;
+  }
+  #placeholer2{
+    height: 2vw;
+  }
+  #placeholer3{
+    height: 2vw;
+  }
 }
 
 
