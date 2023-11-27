@@ -105,7 +105,41 @@ html, body {
   }
 
 
-@media (min-width: 0px) and (min-height:0px){
+  @media (min-width: 0px) and (min-height:0px){
+    canvas{
+        width: 50px;
+        height: 50px;
+    }
+    h1{
+        font-size: 10px;
+    }
+    #placeholder1,#placeholder3,#placeholder4,#placeholder5{
+        height: 1px;
+    }
+    #placeholder2{
+        height: 15px;
+    }
+
+    #start-button,#backButton{
+        font-size: 5px;
+    }
+    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+        width: 0px;
+        height: 0px;
+        border:0px;
+    
+    }
+    .video{
+        width: 0px;
+        height: 0px;
+    }
+    #infoButton{
+        font-size: 4px;
+    }
+  }
+
+
+@media (min-width: 120px) and (min-height:120px){
     canvas{
         width: 50px;
         height: 50px;
@@ -129,27 +163,64 @@ html, body {
         width: 0px;
         height: 0px;
     }
+    #infoButton{
+        font-size: 4px;
+    }
   }
 
-@media (min-height:150px) and (min-width: 120px){
+
+
+@media (min-width: 144px) and (min-height:201px){
     canvas{
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
     } 
+    #placeholder1{
+        height: 5px;
+    }
+    #placeholder2{
+        height: 5px;
+    } 
+    #placeholder3{
+        height: 5px;
+    } 
+
+    h1{
+        font-size: 10px;
+    }
+    #start-button,#backButton{
+        font-size: 7px;
+        width: 35px;
+    }
+    #infoButton{
+        font-size: 5px;
+        
+    }
+
 }
 
-@media (min-height:200px) and (min-width: 160px){
+@media (min-width: 220px) and (min-height:316px){
     canvas{
-        width: 120px;
-        height: 120px;
+        width: 200px;
+        height: 200px;
     } 
-}
+    #placeholder1{
+        height: 5px;
+    }
+    #placeholder2{
+        height: 5px;
+    } 
+    #placeholder3{
+        height: 10px;
+    } 
 
-@media (min-width: 190px) and (min-height:250px){
-    canvas{
-        width: 180px;
-        height: 180px;
-    } 
+    h1{
+        font-size: 15px;
+    }
+    #start-button,#backButton,#infoButton{
+        font-size: 7px;
+        width: 35px;
+    }
 }
 
 @media (min-width: 304px) and (min-height:316px) {
