@@ -41,7 +41,7 @@ function noPermission(){
 video.addEventListener('play', () => {
   if (!created){
     created =true;
-    canvas = faceapi.createCanvasFromMedia(video);
+    var canvas = faceapi.createCanvasFromMedia(video);
     canvas2.replaceWith(canvas);
 
     currentWidth = video.offsetWidth;
@@ -87,6 +87,7 @@ startButton.addEventListener('click', function(){
     stopVideo();
     tracking=false;
 
+    //untoggled den Button
     if (tracked) {
       tracked=false;
       var button = new bootstrap.Button(trackingButton);
