@@ -2,8 +2,29 @@ body {
   background: rgb(118,231,255);
   background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
 h1{
   color: azure;
   text-shadow: 1em;
+  font-size: 4vw;
 }
+#faceTrack,#emotionTrack,#emotionGame,#helpButton{
+  font-size: 2vw;
+  width: 20vw;
+  
+}
+
+#placeholer1{
+  height: 2vw;
+}
+#placeholer2{
+  height: 3vw;
+}
+#placeholer3{
+  height: 2vw;
+}
+
 

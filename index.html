@@ -15,31 +15,69 @@
   
 
   <div class="container text-center">
-      <div class="row p-4">
+      <div class="row" id="placeholer1"> </div>
+      <div class="row">
         <div class="col">
           <h1>Track Your Emotions</h1>
         </div>
       </div>
-
-      <div class="row p-4">
+      <div class="row" id="placeholer2"> </div>
+      <div class="row">
         <div class="col ">
-          <button id="faceTrack" class="btn btn-outline-light btn-lg">Track Your Face</button>
+          <button id="faceTrack" class="btn btn-outline-light">Track Your Face</button>
+        </div>
+      </div>
+      <div class="row" id="placeholer3"> </div>
+      <div class="row">
+        <div class="col">
+          <button id="emotionTrack" class="btn btn-outline-light ">Track Your Emotions</button>
+        </div>
+      </div>
+      <div class="row" id="placeholer3"> </div>
+      <div class="row">
+        <div class="col">
+          <button id="emotionGame" class="btn btn-outline-light ">Emotion Game</button>
         </div>
       </div>
 
-      <div class="row p-4">
-        <div class="col">
-          <button id="emotionTrack" class="btn btn-outline-light btn-lg">Track Your Emotions</button>
-        </div>
-      </div>
+      <div class="row" id="placeholer3"> </div>
 
-      <div class="row p-4">
+      <div class="row">
         <div class="col">
-          <button id="emotionGame" class="btn btn-outline-light btn-lg">Emotion Game</button>
+          <button id="helpButton" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Help
+          </button>
         </div>
+        
       </div>
     
   </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-md modal-lg modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Track your emotions. Press Start to grant permission to access your camera and start it. Then recreate the emotions of the smileys with your face. If a smiley is filled in, it has recognized exactly this emotion.
+          <br>
+          <br>
+        <b>Notes in case of problems:</b><br>
+          <p>Can only be used on Google Chrome</p>
+          <p>Use the latest version of Google Chrome</p> 
+          <p>Probably not possible on Apple devices</p>
+          <p>Make sure that access to the camera is allowed (click on the "i" symbol to the left of the urls and grant access to the camera)</p>
+          <p>Make sure that the camera is vertical.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
