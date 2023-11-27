@@ -176,7 +176,14 @@ h1{
   }
 
   #container2{
-    width: 40vw;
+    width: 50vw;
+  }
+  
+}
+
+@media (min-width: 1000px){
+  #container2{
+    width: 100vw;
   }
   
 }
