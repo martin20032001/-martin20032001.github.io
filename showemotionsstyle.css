@@ -199,7 +199,7 @@ h1{
     height: 40px;
   } 
   #placeholder3 {
-    height: 80px;
+    height: 40px;
   } 
   #backButton,#start-button,#trackButton,#infoButton {
     font-size: 20px; 
@@ -234,21 +234,129 @@ h1{
 } 
 }
 
+@media (max-width: 180px){
+  
+  #infoButton{
+    position: relative;
+    top: 0px;
+  right: 0px;
+  }
+  
+}
+
+@media (max-width: 200px){
+  
+  #infoButton{
+    font-size: 7px; 
+    
+  }
+  h1{
+    font-size: 10px;
+  }
+  }
+
 @media (max-width: 273px){
   
 #backButton,#start-button,#trackButton {
   font-size: 7px; 
 }
+h1{
+  font-size: 15px;
 }
-
-
+}
 
 @media (max-height: 200px){
   
   #backButton,#start-button {
     font-size: 5px; 
 }
+}
+
+@media (min-height: 0px){
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 10px;
+    height: 10px;
   }
+}
+
+@media (min-height: 140px){
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-height: 200px)and (min-width: 104px){
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-height: 307px)and (min-width: 144px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-height: 400px) and (min-width: 204px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-height: 500px) and (min-width: 250px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (min-height: 600px)and (min-width: 284px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (min-height: 700px)and (min-width: 328px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-height: 800px)and (min-width: 364px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (min-height: 900px)and (min-width: 410px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 190px;
+    height: 190px;
+  }
+}
+
+@media (min-height: 1000px)and (min-width: 460px){
+  
+  #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
+    width: 210px;
+    height: 210px;
+  }
+}
+
+
 
 
 
