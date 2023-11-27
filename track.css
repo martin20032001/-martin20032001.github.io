@@ -18,6 +18,9 @@ h1{
   font-size: 6vw;
 }
 
+ul {
+  padding-left: 40px;
+}
 
 #container2{
   position:relative;
@@ -169,8 +172,8 @@ h1{
 h1{
   font-size: 2vw;
 }
-#infoButton,#backButton,#startButton,#trackButton{
-  font-size: 1vw;
+#startButton,#trackButton{
+  font-size: 1.5vw;
 }
 #infoButton,#backButton{
   width: 3vw; 
