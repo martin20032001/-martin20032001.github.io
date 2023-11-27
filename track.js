@@ -1,5 +1,5 @@
 const video = document.getElementById('video')
-const startButton = document.getElementById('start-button')
+const startButton = document.getElementById('startButton')
 const trackingDiv = document.getElementById("track")
 const trackingButton = document.getElementById("trackButton")
 const homeSite = "index.html"
