@@ -269,6 +269,13 @@ h1{
   }
 
 
+  @media (min-height: 0px) and (min-width:0px){
+    #circle-surprised, #circle-happy, #circle-sad, #circle-disgusted, #circle-neutral, #circle-angry{
+      width: 10px;
+      height: 10px;
+    }
+  }
+
   @media (min-height: 100px) and (min-width:55px){
     #circle-surprised, #circle-happy, #circle-sad, #circle-disgusted, #circle-neutral, #circle-angry{
       width: 40px;
