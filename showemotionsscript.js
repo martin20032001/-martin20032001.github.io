@@ -104,7 +104,7 @@ function stopVideo() {
   }
 }
 
-//startet alles, macht video und track button sichtbar
+//startet alles
 startButton.addEventListener('click', function(){
   if (!running){
     running=true;

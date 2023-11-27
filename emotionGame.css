@@ -1,69 +1,69 @@
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-
-  body {
+body {
     background: rgb(118,231,255);
     background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
     align-items: center;
     justify-content: center;
-  }
+}
 
-  canvas {
+canvas {
     position: relative;
     outline: 1px solid white;
     aspect-ratio: 1/1;
-  }
+}
 
-  #infoButton {
+#infoButton { 
     position: absolute;
-    top:auto;
+    top: auto;
     right: 10px;
     z-index: 1000;
     font-size: 15px;
-  }
-
-  h1{
-    color: azure;
-    text-shadow: 1em;
+    text-align: center;
 }
 
-#placeholder1 {
-    height: 10px;
-} 
-#placeholder2 {
+#backButton{
+    position: absolute;
+    top: auto;
+    left: 10px;
+    z-index: 1000;
+    font-size: 15px;
+    text-align: center;
+}
+
+h1{
+    color: azure;
+}
+
+#placeholder1,#placeholder2 {
     height: 10px;
 } 
 
 #placeholder3 {
     height: 20px;
 } 
-#placeholder4 {
-    height: 30px;
-} 
-#placeholder5 {
+
+#placeholder4, #placeholder5 {
     height: 30px;
 } 
 
+/*smiley container*/
 .circle-container {
-
     display: flex;
     justify-content: center;
-  }
+}
+
 .circle-container-right {
     margin: auto;
     display: inline-block;
     justify-content: end;
-   
 }
+
 .circle-container-left{
     margin: auto;
     display: inline-block;
     justify-content: center;
 }
-  
 
+/*smileys erzeugen*/
 #circle-happy {
     width: 100px;
     height: 100px;
@@ -84,12 +84,12 @@ html, body {
     background-size: cover;
   }
 
-  #circle-sad {
+  #circle-angry {
     width: 100px;
     height: 100px;
     border: 2px solid black;
     border-radius: 50%;
-    background-image:url("sad.png"), linear-gradient(0deg, #091fe8 100%, #3f48cc00 0%);
+    background-image:url("angry.png"), linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
     background-clip: padding-box;
     background-size: cover;
   }
@@ -104,8 +104,8 @@ html, body {
     background-size: cover;
   }
 
-
-  @media (min-width: 0px) and (min-height:0px){
+/* Ab jetzt kommen die media querys zu Anpassung des Inhalts an die Größe der Seite*/
+@media (min-width: 0px) and (min-height:0px){
     canvas{
         width: 50px;
         height: 50px;
@@ -119,15 +119,13 @@ html, body {
     #placeholder2{
         height: 15px;
     }
-
     #start-button,#backButton{
         font-size: 5px;
     }
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 0px;
         height: 0px;
         border:0px;
-    
     }
     .video{
         width: 0px;
@@ -136,7 +134,7 @@ html, body {
     #infoButton{
         font-size: 4px;
     }
-  }
+}
 
 
 @media (min-width: 120px) and (min-height:120px){
@@ -153,7 +151,7 @@ html, body {
     #start-button,#backButton{
         font-size: 5px;
     }
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 0px;
         height: 0px;
         border:0px;
@@ -167,8 +165,6 @@ html, body {
         font-size: 4px;
     }
   }
-
-
 
 @media (min-width: 144px) and (min-height:201px){
     canvas{
@@ -184,7 +180,6 @@ html, body {
     #placeholder3{
         height: 5px;
     } 
-
     h1{
         font-size: 10px;
     }
@@ -194,9 +189,7 @@ html, body {
     }
     #infoButton{
         font-size: 5px;
-        
     }
-
 }
 
 @media (min-width: 220px) and (min-height:316px){
@@ -213,7 +206,6 @@ html, body {
     #placeholder3{
         height: 10px;
     } 
-
     h1{
         font-size: 15px;
     }
@@ -228,12 +220,11 @@ html, body {
         width: 150px;
         height: 150px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 30px;
         height: 30px;
         border:2px;
     }
-
     #placeholder1{
         height: 5px;
     }
@@ -243,7 +234,6 @@ html, body {
     #placeholder3{
         height: 10px;
     } 
-
     #placeholder5,#placeholder4{
         height: 5px;
     } 
@@ -262,12 +252,11 @@ html, body {
         width: 200px;
         height: 200px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 50px;
         height: 50px;
         border:2px;
     }
-
     #placeholder1{
         height: 5px;
     }
@@ -296,7 +285,7 @@ html, body {
         width: 200px;
         height: 200px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 60px;
         height: 60px;
         border:2px;
@@ -310,7 +299,6 @@ html, body {
     #placeholder3{
         height: 20px;
     } 
-
     #placeholder5,#placeholder4{
         height: 10px;
     } 
@@ -328,12 +316,11 @@ html, body {
         width: 200px;
         height: 200px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 60px;
         height: 60px;
         border:2px;
     }
-
     #placeholder1{
         height: 10px;
     }
@@ -361,12 +348,11 @@ html, body {
         width: 300px;
         height: 300px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 80px;
         height: 80px;
         border:2px;
     }
-
     #placeholder1{
         height: 10px;
     }
@@ -387,12 +373,11 @@ html, body {
         width: 350px;
         height: 350px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 100px;
         height: 100px;
         border:2px;
     }
-
     #placeholder1{
         height: 10px;
     }
@@ -413,12 +398,11 @@ html, body {
         width: 400px;
         height: 400px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 100px;
         height: 100px;
         border:2px;
     }
-
     #placeholder1{
         height: 10px;
     }
@@ -439,7 +423,7 @@ html, body {
         width: 450px;
         height: 450px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 120px;
         height: 120px;
         border:2px;
@@ -455,12 +439,13 @@ html, body {
         width: 85px;
     }
 }
+
 @media (min-width: 1400px) and (min-height:1070px) {
     canvas{
         width: 500px;
         height: 500px;
     } 
-    #circle-happy,#circle-sad,#circle-surprised,#circle-disgusted{
+    #circle-happy,#circle-angry,#circle-surprised,#circle-disgusted{
         width: 150px;
         height: 150px;
         border:2px;
@@ -475,6 +460,4 @@ html, body {
         font-size: 30px;
         width: 90px;
     }
-    
-
 }

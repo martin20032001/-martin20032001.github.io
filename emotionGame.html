@@ -12,19 +12,19 @@
 </head>
 <body>
     <div class="container text-center">
+
         <div class="row">
             <div class="video">
                 <video id="video" width="0" height="0" class="mw-100" autoplay muted></video>
             </div>
         </div>
 
-        <div class="row">
-            <div id="placeholder1" class="row"></div>
-        </div>
+        <div id="placeholder1" class="row"></div>
         
-
         <div class="row">
-            <div class="col"></div>
+            <div class="col">
+                <button id="backButton" class="btn btn-outline-light btn-sm">&#x3c;</button>
+            </div>
             <div class="col">
                 <h1>Emotion Snake</h1>
             </div>
@@ -35,24 +35,16 @@
             </div>
         </div>
 
-        <div class="row">
-            <div id="placeholder2" class="row"></div>
-        </div>
+        <div id="placeholder2" class="row"></div>
         
-
         <div class="row">
-            <div class="col text-end">
-                <button id="backButton" class="btn btn-outline-light btn-sm">&#x3c;</button>
-              </div>
             <div class="col text-center">
                 <button id="start-button" class="btn btn-outline-light btn-sm">Start</button>
             </div>
-            <div class="col text-center"></div>
         </div>
 
-        <div class="row">
-            <div id="placeholder3" class="row"></div>
-        </div>
+        <div id="placeholder3" class="row"></div>
+        
         
         <div class="row">
             <div class="circle-container">
@@ -60,9 +52,8 @@
             </div>
         </div>
 
-        <div class="row">
-            <div id="placeholder4" class="row"></div>
-        </div>
+        
+        <div id="placeholder4" class="row"></div>
         
         <div class="row" >
             <div class="col text-end justify-content-center align-self-center">
@@ -71,38 +62,28 @@
                     </div>
                 </div>
             </div>
-            
             <div class="col">
                 <div class="gamediv">
                     <canvas width="400" height="400" id="game"></canvas>
                 </div>
-                
             </div>
-            
             <div class="col text-start justify-content-center align-self-center">
                 <div class="circle-container-right">
                     <div id = "circle-disgusted" class="circle-fill"></div>
-                    
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div id="placeholder5" class="row"></div>
-        </div>
+        <div id="placeholder5" class="row"></div>
         
         <div class="row">
             <div class="circle-container">
-                <div id = "circle-sad" class="circle-fill"></div>
+                <div id = "circle-angry" class="circle-fill"></div>
             </div>
         </div>
-
-        
-        
-    
-        
     </div>
 
+    <!--Pop up Benachrichtigung wenn man auf das Info Symbol klickt-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-md modal-lg modal-xl modal-dialog-scrollable">
           <div class="modal-content">
@@ -111,24 +92,39 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Track your emotions. Press Start to grant permission to access your camera and start it. Then recreate the emotions of the smileys with your face. If a smiley is filled in, it has recognized exactly this emotion.
-              <br>
-              <br>
-            <b>Notes in case of problems:</b><br>
-              <p>Can only be used on Google Chrome</p>
-              <p>Use the latest version of Google Chrome</p> 
-              <p>Probably not possible on Apple devices</p>
-              <p>Make sure that access to the camera is allowed (click on the "i" symbol to the left of the urls and grant access to the camera)</p>
-              <p>Make sure that the camera is vertical.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                <b>Instruction:</b>
+                <p>Experience playing Snake with a twist: control the game using facial expressions. This version is akin to the classic Snake game. 
+                    You are the snake, and your goal is to eat apples. Each apple you eat makes your tail grow longer. But be careful, if you end up 
+                    eating your own tail, it's game over. A unique feature of this version is teleportation: if you touch a wall, you'll be transported
+                    to the opposite side, adding an exciting new dimension to the game.
+                </p>
+                <br>
+                <b>Controls:</b>
+                <ul>
+                    <li>Happy: up</li>
+                    <li>Angry: down</li>
+                    <li>Surprised: left</li>
+                    <li>Disgusted: right</li>
+                </ul>
+                <br>
+                <b>Guidelines to Avoid Problems:</b>
+                <ul>
+                    <li>For optimal tracking, hold your smartphone about 20 centimeters from your face, at eye level.</li>
+                </ul>
+                <b>In Case of Technical Issues:</b>
+                <ul>
+                    <li>Can only be used on Google Chrome</li>
+                    <li>Use the latest version of Google Chrome</li> 
+                    <li>Probably not possible on Apple devices</li>
+                    <li>Make sure that access to the camera is allowed (click on the "i" symbol to the left of the urls and grant access to the camera)</li>
+                    <li>When using an older smartphone, you might experience lag or it may not work properly</li>
+                    <li>Ensure that the camera is positioned vertically for optimal functionality</li>
+                </ul>
             </div>
           </div>
         </div>
       </div>
 
-    
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
