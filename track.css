@@ -1,189 +1,192 @@
 #track {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #trackingGridDiv {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 
 body {
-    background: rgb(118,231,255);
-    background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
+  background: rgb(118,231,255);
+  background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
 }
 
 h1{
-    color: azure;
-    text-shadow: 1em;
-    font-size: 6vw;
+  color: azure;
+  text-shadow: 1em;
+  font-size: 6vw;
 }
 
 
 #container2{
-    position:relative;
-    z-index:10;
-    text-align: center;
-    width: 100vw;
-    max-width: 100%;
+  position:relative;
+  z-index:10;
+  text-align: center;
+  width: 100vw;
+  max-width: 100%;
 }
 
 .video, #trackingGridDiv {               
-    position:absolute;
-    left:0;
-    top:0;
-    z-index:20;                                        
-    width: 100%;
-    height: auto; /* oder eine bestimmte Aspect Ratio */
-   }
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:20;                                        
+  width: 100%;
+  height: auto; /* oder eine bestimmte Aspect Ratio */
+ }
 
 
-   #infoButton {
-    position: absolute;
-    top: auto;
-    right: 5vw;
-    z-index: 1000;
-    font-size: 3vw;
-    text-align: center;
-    width: 4vw; /* Setzen Sie die Breite des Buttons */
-    height: 4vw; /* Setzen Sie die Höhe des Buttons auf denselben Wert wie die Breite */
-    line-height: 4vw; /* Hilft dabei, den Text vertikal zu zentrieren */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
+ #infoButton {
+  position: absolute;
+  top: auto;
+  right: 5vw;
+  z-index: 1000;
+  font-size: 3vw;
+  text-align: center;
+  width: 4vw; /* Setzen Sie die Breite des Buttons */
+  height: 4vw; /* Setzen Sie die Höhe des Buttons auf denselben Wert wie die Breite */
+  line-height: 4vw; /* Hilft dabei, den Text vertikal zu zentrieren */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
-  #backButton{
-    position: absolute;
-    top: auto;
-    left: 5vw;
-    z-index: 1000;
-    font-size: 3vw;
-    text-align: center;
-    width: 4vw; 
-    height: 4vw; 
-    line-height: 4vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
+}
 
-  #startButton,#trackButton{
-    font-size: 2vw;
-  }
+#backButton{
+  position: absolute;
+  top: auto;
+  left: 5vw;
+  z-index: 1000;
+  font-size: 3vw;
+  text-align: center;
+  width: 4vw; 
+  height: 4vw; 
+  line-height: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#startButton,#trackButton{
+  font-size: 2vw;
+}
 
 
 @media (min-height: 0px){
-    #placeholder1 {
-      height: 5px;
-    } 
-    #placeholder2 {
-      height: 5px;
-    } 
-    #placeholder3 {
-      height: 5px;
-    }  
-   
-}
-
-@media (min-height: 550px){
-  #placeholder1,#placeholder2 {
+  #placeholder1 {
+    height: 5px;
+  } 
+  #placeholder2 {
     height: 5px;
   } 
   #placeholder3 {
-    height: 10px;
-  } 
-  
+    height: 5px;
+  }  
  
 }
 
+@media (min-height: 550px){
+#placeholder1,#placeholder2 {
+  height: 5px;
+} 
+#placeholder3 {
+  height: 10px;
+} 
+
+
+}
+
 @media (min-height: 690px){
-  #placeholder1,#placeholder2 {
-    height: 10px;
-  } 
-  #placeholder3 {
-    height: 20px;
-  } 
+#placeholder1,#placeholder2 {
+  height: 10px;
+} 
+#placeholder3 {
+  height: 20px;
+} 
 }
 
 @media (min-height: 700px){
-    #placeholder1,#placeholder2 {
-      height: 20px;
-    } 
-    #placeholder3 {
-      height: 30px;
-    } 
+  #placeholder1,#placeholder2 {
+    height: 20px;
+  } 
+  #placeholder3 {
+    height: 30px;
+  } 
 }
 
 @media (min-height: 800px){
-    #placeholder1 {
-      height: 40px;
-    } 
-    #placeholder2 {
-      height: 40px;
-    } 
-    #placeholder3 {
-      height: 80px;
-    }   
+  #placeholder1 {
+    height: 40px;
+  } 
+  #placeholder2 {
+    height: 40px;
+  } 
+  #placeholder3 {
+    height: 80px;
+  }   
 }
 
 
 @media (min-width: 300px){
-  h1{
-    font-size: 5vw;
-  }
-  #infoButton,#backButton,#startButton,#trackButton{
-    font-size: 2vw;
-  }
-  #infoButton,#backButton{
-    width: 2vw; 
-    height: 2vw; 
-    
-  }
-  #container2{
-    width: 80vw;
-  }
+h1{
+  font-size: 5vw;
+}
+#infoButton,#backButton,#startButton,#trackButton{
+  font-size: 3vw;
+}
+#infoButton,#backButton{
+  width: 2vw; 
+  height: 2vw; 
+  font-size: 4vw;
+  
+}
+#container2{
+  width: 80vw;
+}
 }
 
 @media (min-width: 500px){
-  h1{
-    font-size: 3vw;
-  }
-  #infoButton,#backButton,#startButton,#trackButton{
-    font-size: 2vw;
-  }
-  #infoButton,#backButton{
-    width: 4vw; 
-    height: 4vw; 
-  }
+h1{
+  font-size: 3vw;
+}
+#infoButton,#backButton,#startButton,#trackButton{
+  font-size: 2vw;
+}
+#infoButton,#backButton{
+  font-size: 3vw;
+  width: 4vw; 
+  height: 4vw; 
+}
 
-  #container2{
-    width: 60vw;
-  }
-  
+#container2{
+  width: 60vw;
+}
+
 }
 @media (min-width: 700px){
-  h1{
-    font-size: 2vw;
-  }
-  #infoButton,#backButton,#startButton,#trackButton{
-    font-size: 1vw;
-  }
-  #infoButton,#backButton{
-    width: 3vw; 
-    height: 3vw; 
-  }
+h1{
+  font-size: 2vw;
+}
+#infoButton,#backButton,#startButton,#trackButton{
+  font-size: 1vw;
+}
+#infoButton,#backButton{
+  width: 3vw; 
+  height: 3vw; 
+  font-size: 2vw;
+}
 
-  #container2{
-    width: 50vw;
-  }
-  
+#container2{
+  width: 50vw;
+}
+
 }
 
 @media (min-width: 1000px){
-  #container2{
-    width: 100vw;
-  }
-  
+#container2{
+  width: 100vw;
+}
+
 }
