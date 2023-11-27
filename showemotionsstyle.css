@@ -1,3 +1,8 @@
+body {
+  background: rgb(118,231,255);
+  background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
+}
+
 #track {
     visibility: hidden;
 }
@@ -6,24 +11,27 @@
     visibility: hidden;
 }
 
-#infoButton {
+h1{
+    color: azure;
+}
+
+/*Info und Back Button sollen oben an einer Stelle bleiben*/
+#infoButton { 
   position: absolute;
-  top: 10px;
+  top: auto;
   right: 10px;
   z-index: 1000;
   font-size: 15px;
+  text-align: center;
 }
 
-body {
-    
-    background: rgb(118,231,255);
-    background: radial-gradient(circle, rgba(118,231,255,1) 0%, rgba(99,169,255,1) 76%)  no-repeat fixed center; 
-}
-
-
-h1{
-    color: azure;
-    text-shadow: 10px;
+#backButton{
+  position: absolute;
+  top: auto;
+  left: 10px;
+  z-index: 1000;
+  font-size: 15px;
+  text-align: center;
 }
 
 .circle-container-left { 
@@ -37,8 +45,8 @@ h1{
   justify-content: start;
 }
 
+/* 6 verschiedene Smileys mit den 6 verschiedenen Emotionen*/
 #circle-happy {
- 
     width: 50px;
     height: 50px;
     border: 2px solid black;
@@ -46,26 +54,21 @@ h1{
     background-image:url("happy.png"),linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
     background-clip: padding-box;
     background-size: cover;
-    
- 
 }
 
 #circle-neutral{
   width: 50px;
   height: 50px;
-  
   border: 2px solid black;
   border-radius: 50%;
   background-image:url("neutral.png"), linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
   background-clip: padding-box;
   background-size: cover;
-  
 }
 
 #circle-angry{
   width: 50px;
   height: 50px;
-  
   border: 2px solid black;
   border-radius: 50%;
   background-image:url("angry.png"),linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
@@ -103,40 +106,18 @@ h1{
   background-size: cover;
 }
 
-@keyframes pulse {
-  0% {
-    color: rgb(255, 0, 0);
-  }
-  50%{
-    opacity: 0.5;
-  }
-  100% {
-    color: rgb(255, 0, 0);
-  }
-}
-
-
-
+/* Ab jetzt kommen die media querys zu Anpassung des Inhalts an die Größe der Seite*/
 @media (min-height: 0px){
-  #placeholder1 {
+  #placeholder1,#placeholder2,#placeholder3,#placeholder4,#placeholder5 {
     height: 5px;
   } 
-  #placeholder2 {
-    height: 5px;
-  } 
-  #placeholder3 {
-    height: 5px;
-  }  
-  #placeholder4{
-    height: 5px;
-  }
   #backButton,#start-button,#infoButton {
     font-size: 10px; 
-}
-.video, #trackingGridDiv {               
-  height: 0;
-  width: 0;
- }
+  }
+  .video, #trackingGridDiv {               
+    height: 0;
+    width: 0;
+  }
 }
 
 @media (min-height: 550px){
@@ -146,40 +127,39 @@ h1{
   #placeholder3 {
     height: 10px;
   } 
-  #placeholder4{
+  #placeholder4, #placeholder5{
     height: 10px;
   }
   #backButton,#start-button,#infoButton {
-      font-size: 15px; 
+      font-size: 20px; 
   }
-  }
+}
 
 @media (min-height: 620px){
-#placeholder1,#placeholder2 {
-  height: 5px;
-} 
-#placeholder3 {
-  height: 10px;
-} 
-#placeholder4{
-  height: 10px;
-}
-#backButton,#start-button,#infoButton {
-    font-size: 15px; 
-}
+  #placeholder1,#placeholder2 {
+    height: 5px;
+  } 
+  #placeholder3 {
+    height: 10px;
+  } 
+  #placeholder4, #placeholder5{
+    height: 10px;
+  }
+  #backButton,#start-button,#infoButton {
+      font-size: 20px; 
+  }
 }
 
 @media (min-height: 640px){
-#placeholder1,#placeholder2 {
-  height: 5px;
-} 
-#placeholder3 {
-  height: 20px;
-} 
-#placeholder4{
-  height: 20px;
-}
-
+  #placeholder1,#placeholder2 {
+    height: 5px;
+  } 
+  #placeholder3 {
+    height: 20px;
+  } 
+  #placeholder4, #placeholder5{
+    height: 20px;
+  }
 }
 
 @media (min-height: 677px){
@@ -202,76 +182,68 @@ h1{
     height: 40px;
   } 
   #backButton,#start-button,#trackButton,#infoButton {
-    font-size: 20px; 
-}
+    font-size: 25px; 
+  }
 }
 
-
+/*Anpassen der Überschriften/Button und Abstandsgrößen abhängig der Fenstergröße*/
 @media (max-height: 400px){
-
- h1{
-  font-size: 15px;
- }
+  h1{
+    font-size: 15px;
+  }
 }
+
 @media (max-height: 330px){
-
- h1{
-  font-size: 15px;
- }
- #infoButton{
-  font-size: 10px;
-  
-} 
+  h1{
+    font-size: 15px;
+  }
+  #infoButton{
+    font-size: 10px;
+  } 
 }
-@media (max-height: 300px){
 
- h1{
-  font-size: 10px;
- }
- #infoButton{
-  font-size: 5px;
-  
-} 
+@media (max-height: 300px){
+  h1{
+    font-size: 10px;
+  }
+  #infoButton{
+    font-size: 5px;
+  } 
 }
 
 @media (max-width: 180px){
-  
   #infoButton{
     position: relative;
     top: 0px;
-  right: 0px;
+    right: 0px;
   }
-  
 }
 
 @media (max-width: 200px){
-  
   #infoButton{
-    font-size: 7px; 
-    
+    font-size: 7px;  
   }
   h1{
     font-size: 10px;
   }
-  }
+}
 
 @media (max-width: 273px){
-  
-#backButton,#start-button,#trackButton {
-  font-size: 7px; 
-}
-h1{
-  font-size: 15px;
-}
+  #backButton,#start-button,#trackButton {
+    font-size: 7px; 
+  }
+  h1{
+    font-size: 15px;
+  }
 }
 
 @media (max-height: 200px){
-  
   #backButton,#start-button {
     font-size: 5px; 
-}
+  }
 }
 
+/*Anpassen der Größen der Smileys abhängig der Fenstergröße*/
 @media (min-height: 0px){
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 10px;
@@ -293,7 +265,6 @@ h1{
 }
 
 @media (min-height: 307px)and (min-width: 144px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 60px;
     height: 60px;
@@ -301,7 +272,6 @@ h1{
 }
 
 @media (min-height: 400px) and (min-width: 204px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 90px;
     height: 90px;
@@ -309,7 +279,6 @@ h1{
 }
 
 @media (min-height: 500px) and (min-width: 250px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 110px;
     height: 110px;
@@ -317,7 +286,6 @@ h1{
 }
 
 @media (min-height: 600px)and (min-width: 284px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 130px;
     height: 130px;
@@ -325,7 +293,6 @@ h1{
 }
 
 @media (min-height: 700px)and (min-width: 328px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 150px;
     height: 150px;
@@ -333,7 +300,6 @@ h1{
 }
 
 @media (min-height: 800px)and (min-width: 364px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 170px;
     height: 170px;
@@ -341,7 +307,6 @@ h1{
 }
 
 @media (min-height: 900px)and (min-width: 410px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 190px;
     height: 190px;
@@ -349,14 +314,8 @@ h1{
 }
 
 @media (min-height: 1000px)and (min-width: 460px){
-  
   #circle-happy,#circle-sad, #circle-angry, #circle-disgusted, #circle-surprised, #circle-neutral{
     width: 210px;
     height: 210px;
   }
 }
-
-
-
-
-
