@@ -1,4 +1,4 @@
-Die Dateien müssen auf irgendeinem Server abgelegt werden (Bei VSC gibt es die Live Server Extension), ansonsten funktioniert die vewrwendetete face-api.js nicht. Andernfalls ist die Webseite über https://martin20032001.github.io/ erreichbar.
+Die Dateien müssen auf irgendeinem Server abgelegt werden (Bei VSC gibt es die Live Server Extension), ansonsten funktioniert die vewrwendetete face-api.js nicht. Andernfalls ist die Webseite über https://martin20032001.github.io/html/index.html erreichbar.
 
 Struktur der Webseite:
 index.html:
