@@ -24,7 +24,7 @@ const imgDisgusted="disgusted.png";
 const imgSurprised="surprised.png";
 const imgAngry="angry.png";
 
-const homeSite = "index.html";
+const homeSite = "/html/index.html";
 
 var running = false;
 var created = false;
@@ -49,7 +49,7 @@ function startVideo() {
 //falls keine Erlaubnis erteilt wurde -> alert
 function noPermission(){
   alert("Enable camera access permissions");
-  window.location.href = 'track.html'; 
+  window.location.href = '/html/showemotions.html'; 
 }
 
 //startet das Tracking

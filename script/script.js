@@ -1,12 +1,12 @@
 /*jshint esversion: 8 */
 const faceTrackButton = document.getElementById("faceTrack");
-const trackSite = 'track.html';
+const trackSite = '/html/track.html';
 
 const emotionTrackButton = document.getElementById("emotionTrack");
-const emotionSite = 'showemotions.html';
+const emotionSite = '/html/showemotions.html';
 
 const emotionGameButton = document.getElementById("emotionGame");
-const emotionGameSite = 'emotionGame.html';
+const emotionGameSite = '/html/emotionGame.html';
 
 var isChromium = window.chrome;
 var winNav = window.navigator;

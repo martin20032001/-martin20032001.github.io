@@ -3,7 +3,7 @@ const video = document.getElementById('video');
 const startButton = document.getElementById('startButton');
 const trackingDiv = document.getElementById("track");
 const trackingButton = document.getElementById("trackButton");
-const homeSite = "index.html";
+const homeSite = "/html/index.html";
 const canvas2 = document.getElementById('trackingGridCanvas');
 const trackingGridDiv = document.getElementById('trackingGridDiv');
 const backButton = document.getElementById("backButton");
@@ -34,7 +34,7 @@ function startVideo() {
 //falls keine Erlaubnis erteilt wurde -> alert
 function noPermission(){
   alert("Enable camera access permissions");
-  window.location.href = 'track.html'; 
+  window.location.href = '/html/track.html'; 
 }
 
 //startet das video mit dem tracking. Es wird ein canvas erstellt und dann die videogröße angepasst

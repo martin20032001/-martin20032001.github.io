@@ -1,7 +1,7 @@
 /*jshint esversion: 8 */
 const startButton = document.getElementById('start-button');
 const video = document.getElementById('video');
-const homeSite = "index.html";
+const homeSite = "/html/index.html";
 
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -53,7 +53,7 @@ function startVideo() {
 //falls keine Erlaubnis erteilt wurde -> alert
 function noPermission(){
   alert("Enable camera access permissions");
-  window.location.href = 'track.html'; 
+  window.location.href = '/html/emotionGame.html'; 
 }
 
 // startet emotion tracking und bekommt Werte davon
