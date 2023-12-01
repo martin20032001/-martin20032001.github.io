@@ -51,7 +51,7 @@ h1{
     height: 50px;
     border: 2px solid black;
     border-radius: 50%;
-    background-image:url("happy.png"),linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
+    background-image:url("/assets/happy.png"),linear-gradient(0deg, #ffff00 100%, #3f48cc00 0%);
     background-clip: padding-box;
     background-size: cover;
 }
@@ -61,7 +61,7 @@ h1{
   height: 50px;
   border: 2px solid black;
   border-radius: 50%;
-  background-image:url("neutral.png"), linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
+  background-image:url("/assets/neutral.png"), linear-gradient(0deg, #9c958a 100%, #3f48cc00 0%);
   background-clip: padding-box;
   background-size: cover;
 }
@@ -71,7 +71,7 @@ h1{
   height: 50px;
   border: 2px solid black;
   border-radius: 50%;
-  background-image:url("angry.png"),linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
+  background-image:url("/assets/angry.png"),linear-gradient(0deg, #fa3434 100%, #3f48cc00 0%);
   background-clip: padding-box;
   background-size: cover;
 }
@@ -81,7 +81,7 @@ h1{
   height: 50px;
   border: 2px solid black;
   border-radius: 50%;
-  background-image:url("surprised.png"), linear-gradient(0deg, #e809bf 100%, #3f48cc00 0%);
+  background-image:url("/assets/surprised.png"), linear-gradient(0deg, #e809bf 100%, #3f48cc00 0%);
   background-clip: padding-box;
   background-size: cover;
 }
@@ -91,7 +91,7 @@ h1{
   height: 50px;
   border: 2px solid black;
   border-radius: 50%;
-  background-image:url("sad.png"), linear-gradient(0deg, #091fe8 100%, #3f48cc00 0%);
+  background-image:url("/assets/sad.png"), linear-gradient(0deg, #091fe8 100%, #3f48cc00 0%);
   background-clip: padding-box;
   background-size: cover;
 }
@@ -101,7 +101,7 @@ h1{
   height: 50px; 
   border: 2px solid black;
   border-radius: 50%;
-  background-image:url("disgusted.png"), linear-gradient(0deg, #36e809 100%, #3f48cc00 0%);
+  background-image:url("/assets/disgusted.png"), linear-gradient(0deg, #36e809 100%, #3f48cc00 0%);
   background-clip: padding-box;
   background-size: cover;
 }
