@@ -129,7 +129,7 @@ startButton.addEventListener('click', function(){
 //Ändert die Farbe und die Füllung des Kreises abhängig von i
 function changefilling(kreis, i, farbe, smileimg){
   i = i*100;
-  var s = 'url('+smileimg+'), linear-gradient(0deg, '+farbe+' '+i.toString().slice(0, 4)+'%, #3f48cc00 0%)';
+  var s = 'url(/assets/'+smileimg+'), linear-gradient(0deg, '+farbe+' '+i.toString().slice(0, 4)+'%, #3f48cc00 0%)';
   kreis.style.background = s;
   kreis.style.backgroundSize= 'cover';
 }
