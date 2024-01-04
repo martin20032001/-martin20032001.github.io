@@ -1,5 +1,5 @@
 Die Dateien müssen auf irgendeinem Server abgelegt werden (Bei VSC gibt es die Live Server Extension), ansonsten funktioniert die vewrwendetete face-api.js nicht. Andernfalls ist die Webseite über https://martin20032001.github.io/html/index.html erreichbar.
-
+Wichtig: Es funktioniert nur mit Google Chrome und Microsoft Edge, nicht mit Firefox (mit anderen Browsern nicht getestet)
 Struktur der Webseite:
 index.html:
 	Funktionalität: Diese Seite dient als Startpunkt und bietet Zugang zu den verschiedenen Funktionen des Projekts: Gesichtsverfolgung, Emotionstracking und das Emotionsspiel.
